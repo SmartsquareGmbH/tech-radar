@@ -16,7 +16,7 @@
 <svg id="radar"></svg>
 
 <script>
-    const languages = [
+    const languagesAndFrameworks = [
         {
             label: "Vue.js",
             quadrant: 0,
@@ -34,6 +34,18 @@
             quadrant: 0,
             ring: 0,
             moved: 0
+        },
+        {
+            label: "jOOQ",
+            quadrant: 0,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Project Reactor",
+            quadrant: 0,
+            ring: 0,
+            moved: 1
         },
         {
             label: "Clojure",
@@ -297,7 +309,7 @@
             {name: "HOLD", color: "#efafa9"}
         ],
         print_layout: true,
-        entries: [...languages, ...dataManagement, ...infrastructure, ...tools]
+        entries: [...languagesAndFrameworks, ...dataManagement, ...infrastructure, ...tools]
     });
 </script>
 
