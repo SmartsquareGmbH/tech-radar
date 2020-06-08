@@ -233,18 +233,21 @@ function radar_visualization(config) {
 
   var tooltip = d3.select("#canvas")
     .append("div")
-    .append("span")
-    .style("display", "block")
+    .style("display", "inline")
     .style("position", "absolute")
     .style("width", "500px")
     .style("height", "250px")
     .style("visibility", "hidden")
-    .style("border-style", "hidden")
-    .style("padding", "2px")
-    .style("background-color", "lightgrey")
+    .style("border", "2px")
+    .style("border-style", "solid")
+    .style("border-color", "#e5e5e5")
+    .style("padding", "10px")
+    .style("background", "rgba(245,245,245,0.7)")
+    .style("font-family", "Arial, Helvetica")
+    .style("font-size", "12")
     .text("");
 
-  // draw rings
+    // draw rings
   for (var i = 0; i < rings.length; i++) {
     grid.append("circle")
       .attr("cx", 0)
@@ -380,21 +383,34 @@ function radar_visualization(config) {
       .style("opacity", 0);
   }
 
+  function toggleDetails(d) {
+    if(tooltip.style("visibility") === "hidden") {
+      tooltip.style("top", (event.pageY+20)+"px")
+        .style("left",(event.pageX+20)+"px")
+        .style("visibility", "visible");
+      tooltip.append("h3")
+        .style("margin-top", "0px")
+        .text(config.rings[d.ring].name);
+      tooltip.append("p")
+        .text(d.reason || "");
+    } else {
+      tooltip.style("visibility", "hidden");
+      tooltip.text("");
+    }
+  }
+
   function highlightLegendItem(d) {
     var legendItem = document.getElementById("legendItem" + d.id);
     legendItem.setAttribute("filter", "url(#solid)");
     legendItem.setAttribute("fill", "white");
-
-    tooltip.style("visibility", "visible");
-    tooltip.text(d.reason || "");
+    toggleDetails(d);
   }
 
   function unhighlightLegendItem(d) {
     var legendItem = document.getElementById("legendItem" + d.id);
     legendItem.removeAttribute("filter");
     legendItem.removeAttribute("fill");
-
-    tooltip.style("visibility", "hidden");
+    toggleDetails(d);
   }
 
   // draw blips on radar
