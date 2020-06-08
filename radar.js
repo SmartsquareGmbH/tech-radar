@@ -231,6 +231,19 @@ function radar_visualization(config) {
   filter.append("feComposite")
     .attr("in", "SourceGraphic");
 
+  var tooltip = d3.select("#canvas")
+    .append("div")
+    .append("span")
+    .style("display", "block")
+    .style("position", "absolute")
+    .style("width", "500px")
+    .style("height", "250px")
+    .style("visibility", "hidden")
+    .style("border-style", "hidden")
+    .style("padding", "2px")
+    .style("background-color", "lightgrey")
+    .text("");
+
   // draw rings
   for (var i = 0; i < rings.length; i++) {
     grid.append("circle")
@@ -313,6 +326,7 @@ function radar_visualization(config) {
               .style("font-family", "Arial, Helvetica")
               .style("font-size", "11")
               .on("mouseover", function(d) { showBubble(d); highlightLegendItem(d); })
+              .on("mousemove", function(){ return tooltip.style("top", (event.pageY+20)+"px").style("left",(event.pageX+20)+"px");})
               .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
       }
     }
@@ -370,12 +384,17 @@ function radar_visualization(config) {
     var legendItem = document.getElementById("legendItem" + d.id);
     legendItem.setAttribute("filter", "url(#solid)");
     legendItem.setAttribute("fill", "white");
+
+    tooltip.style("visibility", "visible");
+    tooltip.text(d.reason || "");
   }
 
   function unhighlightLegendItem(d) {
     var legendItem = document.getElementById("legendItem" + d.id);
     legendItem.removeAttribute("filter");
     legendItem.removeAttribute("fill");
+
+    tooltip.style("visibility", "hidden");
   }
 
   // draw blips on radar

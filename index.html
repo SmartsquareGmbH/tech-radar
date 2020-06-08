@@ -13,12 +13,15 @@
 
 <body>
 
-<svg id="radar"></svg>
+<div id="canvas">
+    <svg id="radar" style="z-index: -1;"></svg>
+</div>
 
 <script>
     const languagesAndFrameworks = [
         {
             label: "Vue.js",
+            reason: "Vue.js is a lightweight and pragmatic approach to single-page applications that gets out of your way and just works.",
             quadrant: 0,
             ring: 0,
             moved: 0
