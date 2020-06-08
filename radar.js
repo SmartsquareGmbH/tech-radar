@@ -392,7 +392,7 @@ function radar_visualization(config) {
         .style("margin-top", "0px")
         .text(config.rings[d.ring].name);
       tooltip.append("p")
-        .text(d.reason || "");
+        .text(d.reason || "No reason given yet ¯\\_(ツ)_/¯");
     } else {
       tooltip.style("visibility", "hidden");
       tooltip.text("");
