@@ -242,7 +242,7 @@ function radar_visualization(config) {
     .style("border-style", "solid")
     .style("border-color", "#e5e5e5")
     .style("padding", "10px")
-    .style("background", "rgba(245,245,245,0.7)")
+    .style("background", "rgba(245,245,245,0.9)")
     .style("font-family", "Arial, Helvetica")
     .style("font-size", "12")
     .text("");
