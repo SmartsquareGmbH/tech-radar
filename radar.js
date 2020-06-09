@@ -195,6 +195,7 @@ function radar_visualization(config) {
     .style("background-color", config.colors.background)
     .attr("width", config.width)
     .attr("height", config.height);
+    // .on("click", function() { hideDetails(); });
 
   var radar = svg.append("g");
   if ("zoomed_quadrant" in config) {
@@ -235,8 +236,8 @@ function radar_visualization(config) {
     .append("div")
     .style("display", "inline")
     .style("position", "absolute")
-    .style("width", "500px")
-    .style("height", "250px")
+    .style("width", "400px")
+    .style("height", "200px")
     .style("visibility", "hidden")
     .style("border", "2px")
     .style("border-style", "solid")
@@ -244,8 +245,7 @@ function radar_visualization(config) {
     .style("padding", "10px")
     .style("background", "rgba(245,245,245,0.9)")
     .style("font-family", "Arial, Helvetica")
-    .style("font-size", "12")
-    .text("");
+    .style("font-size", "12");
 
     // draw rings
   for (var i = 0; i < rings.length; i++) {
@@ -328,8 +328,8 @@ function radar_visualization(config) {
               .text(function(d, i) { return d.id + ". " + d.label; })
               .style("font-family", "Arial, Helvetica")
               .style("font-size", "11")
+              .on("click", function(d) { toggleDetails(d); })
               .on("mouseover", function(d) { showBubble(d); highlightLegendItem(d); })
-              .on("mousemove", function(){ return tooltip.style("top", (event.pageY+20)+"px").style("left",(event.pageX+20)+"px");})
               .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
       }
     }
@@ -384,18 +384,18 @@ function radar_visualization(config) {
   }
 
   function toggleDetails(d) {
-    if(tooltip.style("visibility") === "hidden") {
+    if(tooltip.style("visibility") === "hidden" && event.srcElement.id !== 'radar') {
       tooltip.style("top", (event.pageY+20)+"px")
         .style("left",(event.pageX+20)+"px")
         .style("visibility", "visible");
       tooltip.append("h3")
         .style("margin-top", "0px")
-        .text(config.rings[d.ring].name);
+        .text(d.label);
       tooltip.append("p")
-        .text(d.reason || "No reason given yet ¯\\_(ツ)_/¯");
+        .html(d.reason || "No reason given yet ¯\\_(ツ)_/¯");
     } else {
       tooltip.style("visibility", "hidden");
-      tooltip.text("");
+      tooltip.html("");
     }
   }
 
@@ -403,14 +403,12 @@ function radar_visualization(config) {
     var legendItem = document.getElementById("legendItem" + d.id);
     legendItem.setAttribute("filter", "url(#solid)");
     legendItem.setAttribute("fill", "white");
-    toggleDetails(d);
   }
 
   function unhighlightLegendItem(d) {
     var legendItem = document.getElementById("legendItem" + d.id);
     legendItem.removeAttribute("filter");
     legendItem.removeAttribute("fill");
-    toggleDetails(d);
   }
 
   // draw blips on radar
