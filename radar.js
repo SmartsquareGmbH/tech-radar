@@ -194,7 +194,8 @@ function radar_visualization(config) {
   var svg = d3.select("svg#" + config.svg_id)
     .style("background-color", config.colors.background)
     .attr("width", config.width)
-    .attr("height", config.height);
+    .attr("height", config.height)
+    .on("click", function() { return hideReason(); });
 
   var radar = svg.append("g");
   if ("zoomed_quadrant" in config) {
@@ -231,7 +232,22 @@ function radar_visualization(config) {
   filter.append("feComposite")
     .attr("in", "SourceGraphic");
 
-  // draw rings
+  var reasonBox = d3.select("#canvas")
+    .append("div")
+    .style("display", "inline")
+    .style("position", "absolute")
+    .style("width", "400px")
+    .style("height", "200px")
+    .style("visibility", "hidden")
+    .style("border", "2px")
+    .style("border-style", "solid")
+    .style("border-color", "#e5e5e5")
+    .style("padding", "10px")
+    .style("background", "rgba(245,245,245,0.9)")
+    .style("font-family", "Arial, Helvetica")
+    .style("font-size", "12");
+
+    // draw rings
   for (var i = 0; i < rings.length; i++) {
     grid.append("circle")
       .attr("cx", 0)
@@ -312,6 +328,8 @@ function radar_visualization(config) {
               .text(function(d, i) { return d.id + ". " + d.label; })
               .style("font-family", "Arial, Helvetica")
               .style("font-size", "11")
+              .style("cursor", "pointer")
+              .on("click", function(d) { showReason(d); })
               .on("mouseover", function(d) { showBubble(d); highlightLegendItem(d); })
               .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
       }
@@ -364,6 +382,27 @@ function radar_visualization(config) {
     var bubble = d3.select("#bubble")
       .attr("transform", translate(0,0))
       .style("opacity", 0);
+  }
+
+  function hideReason() {
+    if(event.srcElement.id === 'radar') {
+      reasonBox.style("visibility", "hidden");
+      reasonBox.html("");
+    }
+  }
+
+  function showReason(d) {
+    if(event.srcElement.id !== 'radar') {
+      reasonBox.html("")
+        .style("top", (event.pageY+20)+"px")
+        .style("left",(event.pageX+20)+"px")
+        .style("visibility", "visible");
+      reasonBox.append("h3")
+        .style("margin-top", "0px")
+        .text(d.label);
+      reasonBox.append("p")
+        .html(d.reason || "No reason given yet ¯\\_(ツ)_/¯");
+    }
   }
 
   function highlightLegendItem(d) {
