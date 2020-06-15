@@ -194,8 +194,7 @@ function radar_visualization(config) {
   var svg = d3.select("svg#" + config.svg_id)
     .style("background-color", config.colors.background)
     .attr("width", config.width)
-    .attr("height", config.height)
-    .on("click", function() { return hideReason(); });
+    .attr("height", config.height);
 
   var radar = svg.append("g");
   if ("zoomed_quadrant" in config) {
@@ -246,6 +245,9 @@ function radar_visualization(config) {
     .style("background", "rgba(245,245,245,0.9)")
     .style("font-family", "Arial, Helvetica")
     .style("font-size", "12");
+
+  d3.select('#canvas')
+    .on("click", function() { return hideReason(); })
 
     // draw rings
   for (var i = 0; i < rings.length; i++) {
@@ -385,7 +387,7 @@ function radar_visualization(config) {
   }
 
   function hideReason() {
-    if(event.srcElement.id === 'radar') {
+    if(!event.srcElement.id.startsWith('legendItem')) {
       reasonBox.style("visibility", "hidden");
       reasonBox.html("");
     }
