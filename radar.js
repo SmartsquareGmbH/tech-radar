@@ -194,8 +194,8 @@ function radar_visualization(config) {
   var svg = d3.select("svg#" + config.svg_id)
     .style("background-color", config.colors.background)
     .attr("width", config.width)
-    .attr("height", config.height);
-    // .on("click", function() { hideDetails(); });
+    .attr("height", config.height)
+    .on("click", function() { return hideReason(); });
 
   var radar = svg.append("g");
   if ("zoomed_quadrant" in config) {
@@ -232,7 +232,7 @@ function radar_visualization(config) {
   filter.append("feComposite")
     .attr("in", "SourceGraphic");
 
-  var tooltip = d3.select("#canvas")
+  var reasonBox = d3.select("#canvas")
     .append("div")
     .style("display", "inline")
     .style("position", "absolute")
@@ -328,7 +328,8 @@ function radar_visualization(config) {
               .text(function(d, i) { return d.id + ". " + d.label; })
               .style("font-family", "Arial, Helvetica")
               .style("font-size", "11")
-              .on("click", function(d) { toggleDetails(d); })
+              .style("cursor", "pointer")
+              .on("click", function(d) { showReason(d); })
               .on("mouseover", function(d) { showBubble(d); highlightLegendItem(d); })
               .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
       }
@@ -383,19 +384,24 @@ function radar_visualization(config) {
       .style("opacity", 0);
   }
 
-  function toggleDetails(d) {
-    if(tooltip.style("visibility") === "hidden" && event.srcElement.id !== 'radar') {
-      tooltip.style("top", (event.pageY+20)+"px")
+  function hideReason() {
+    if(event.srcElement.id === 'radar') {
+      reasonBox.style("visibility", "hidden");
+      reasonBox.html("");
+    }
+  }
+
+  function showReason(d) {
+    if(event.srcElement.id !== 'radar') {
+      reasonBox.html("")
+        .style("top", (event.pageY+20)+"px")
         .style("left",(event.pageX+20)+"px")
         .style("visibility", "visible");
-      tooltip.append("h3")
+      reasonBox.append("h3")
         .style("margin-top", "0px")
         .text(d.label);
-      tooltip.append("p")
+      reasonBox.append("p")
         .html(d.reason || "No reason given yet ¯\\_(ツ)_/¯");
-    } else {
-      tooltip.style("visibility", "hidden");
-      tooltip.html("");
     }
   }
 
