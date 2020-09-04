@@ -54,13 +54,6 @@
             moved: 1
         },
         {
-            label: "Clojure",
-            reason: "<a href='https://clojure.org/' target='_blank'>Clojure</a> is a Lisp dialect that runs on the JVM. It encourages developers to write software in a functional style and provides the required language constructs. Clojure code can be very modular and reusable.<br>While enjoying the nice language for competition like projects, we did not yet use it for customer projects.",
-            quadrant: 0,
-            ring: 2,
-            moved: 0
-        },
-        {
             label: "Python",
             reason: "<a href='https://www.python.org/' target='_blank'>Python</a> is an interpreted, general-purpose programming language that supports several programming paradigms. When this language is mastered, applications can be written extremly quick due to the huge ecosystem. This language is often the choice in development competitions. <br>We use it in a customer project for a small microservice that exports data out of an Oracle database.",
             quadrant: 0,
@@ -77,19 +70,6 @@
             label: "Groovy Scripting",
             quadrant: 0,
             ring: 0,
-            moved: 0
-        },
-        {
-            label: "Rust",
-            reason: "<a href='https://www.rust-lang.org/' target='_blank'>Rust</a> is a programming language with focus on performance and safety. Rust's syntax is similar to the one from C++ but also provides memory safety without the usage of a garbage collector. It's performance is also comparable to the one from C++.<br>We are not yet using it in customer projects but due to the smaller runtime compared to JVM implementations it might be a good choice for fast backend applications.",
-            quadrant: 0,
-            ring: 2,
-            moved: 0
-        },
-        {
-            label: "Go",
-            quadrant: 0,
-            ring: 3,
             moved: 0
         },
         {
@@ -133,6 +113,12 @@
             moved: 0
         },
         {
+            label: "C#",
+            quadrant: 0,
+            ring: 1,
+            moved: 1
+        },
+        {
             label: "Vavr",
             reason: "<a href='https://www.vavr.io/'>Vavr</a> is a functional library for Java 8+. It extends Java for functional data types and a big set of operations on top of them.<br>We use it heavily for one customer and it has advantages when using Java; especially operations on persistent data structures (effectively immutable) collections can be faster than in standard Java. When using Kotlin it might not be such a good choice as there will be competing classes with similar names which makes it inconvenient.",
             quadrant: 0,
@@ -149,20 +135,8 @@
         {
             label: "socket.io",
             quadrant: 0,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Google Nearby",
-            quadrant: 0,
-            ring: 2,
-            moved: 0
-        },
-        {
-            label: "Android Things",
-            quadrant: 0,
-            ring: 2,
-            moved: 0
+            ring: 0,
+            moved: 1
         },
         {
             label: "Thymeleaf",
@@ -193,6 +167,18 @@
             quadrant: 2,
             ring: 0,
             moved: 0
+        },
+        {
+            label: "Sealed Secrets",
+            quadrant: 2,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Descheduler",
+            quadrant: 2,
+            ring: 1,
+            moved: 1
         },
         {
             label: "Kustomize",
@@ -239,14 +225,26 @@
         {
             label: "Traefik",
             quadrant: 2,
-            ring: 2,
-            moved: 0
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Auth0",
+            quadrant: 2,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Kafka",
+            quadrant: 2,
+            ring: 1,
+            moved: 1
         },
         {
             label: "cert-manager",
             quadrant: 2,
-            ring: 1,
-            moved: 0
+            ring: 0,
+            moved: 1
         },
         {
             label: "Keycloak",
@@ -308,12 +306,6 @@
             moved: 0
         },
         {
-            label: "Hasura",
-            quadrant: 1,
-            ring: 2,
-            moved: 0
-        },
-        {
             label: "TimescaleDB",
             quadrant: 1,
             ring: 0,
@@ -336,16 +328,9 @@
             moved: 0
         },
         {
-            label: "Swagger Hub",
+            label: "Swagger",
             quadrant: 3,
             ring: 0,
-            moved: 0
-        },
-        {
-            label: "mob.sh",
-            reason: "mob.sh showed up on our radar as the pandemic started and our team went remote-only for a couple of weeks. This tool enables teams to do remote mob-programming without too much hassle.",
-            quadrant: 3,
-            ring: 1,
             moved: 0
         },
         {
@@ -396,7 +381,7 @@
             grid: "#bbb",
             inactive: "#ddd"
         },
-        title: "Smartsquare Tech Radar — 2020.06",
+        title: "Smartsquare Tech Radar — 2020.09",
         quadrants: [
             {name: "Languages and Frameworks"},
             {name: "Data Management"},
