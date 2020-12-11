@@ -41,16 +41,16 @@
             moved: 0
         },
         {
+            label: "Kluent",
+            quadrant: 0,
+            ring: 0,
+            moved: 0
+        },
+        {
             label: "jOOQ",
             reason: "Complex relations and heavy duty SQL are not a good match for ORMs (see JPA on 'Hold'). <a href='https://www.jooq.org/' target='_blank'>jOOQ</a> is a typesafe SQL DSL for the java ecosystem that works best where you are not dealing with simple CRUD.",
             quadrant: 0,
             ring: 1,
-            moved: 1
-        },
-        {
-            label: "Project Reactor",
-            quadrant: 0,
-            ring: 0,
             moved: 1
         },
         {
@@ -61,13 +61,7 @@
             moved: 0
         },
         {
-            label: "Eclipse Vert.X",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Groovy Scripting",
+            label: "Vert.X",
             quadrant: 0,
             ring: 0,
             moved: 0
@@ -87,6 +81,12 @@
             moved: 0
         },
         {
+            label: "Spring Integration",
+            quadrant: 0,
+            ring: 1,
+            moved: 1
+        },
+        {
             label: "Vuetify",
             quadrant: 0,
             ring: 0,
@@ -96,7 +96,7 @@
             label: "Arrow",
             reason: "<a href='https://arrow-kt.io/' target='_blank'>Arrow</a> is a library that extends the Kotlin standard library for functional data structures like Either or more advanced ones like Optics. It looks a bit like the library Vavr for Java on steroids.<br>We have not yet used Arrow in a customer project so we are not sure how this library performs.",
             quadrant: 0,
-            ring: 1,
+            ring: 2,
             moved: 0
         },
         {
@@ -109,38 +109,31 @@
         {
             label: "Typescript",
             quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "C#",
-            quadrant: 0,
             ring: 1,
-            moved: 1
-        },
-        {
-            label: "Vavr",
-            reason: "<a href='https://www.vavr.io/'>Vavr</a> is a functional library for Java 8+. It extends Java for functional data types and a big set of operations on top of them.<br>We use it heavily for one customer and it has advantages when using Java; especially operations on persistent data structures (effectively immutable) collections can be faster than in standard Java. When using Kotlin it might not be such a good choice as there will be competing classes with similar names which makes it inconvenient.",
-            quadrant: 0,
-            ring: 0,
             moved: 0
         },
         {
             label: "Spock",
             reason: "<a href='http://spockframework.org/' target='_blank'>Spock</a> is a test and specification framework written in Groovy.<br>It integrates smoothly with Java and Kotlin and provides an intuitive :given :when :then test approach. The data tables for data driven tests are really convenient.",
             quadrant: 0,
-            ring: 0,
-            moved: 0
+            ring: 3,
+            moved: -1
         },
         {
             label: "socket.io",
             quadrant: 0,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "Thymeleaf",
             reason: "<a href='https://www.thymeleaf.org/' target='_blank'>Thymeleaf</a> is a server-side rendered Java templating engine. It's focus is on templates that can be rendered by browsers even though no backend server is running. This sounds promising as a UI designer can work independently from development. <br>In our project where we used it, this never happened. UX design and frontend development was done at the same time by the same person. So the templates are not so concise as they could be.",
+            quadrant: 0,
+            ring: 3,
+            moved: 0
+        },
+        {
+            label: "Java",
             quadrant: 0,
             ring: 3,
             moved: 0
@@ -171,7 +164,7 @@
         {
             label: "Sealed Secrets",
             quadrant: 2,
-            ring: 1,
+            ring: 0,
             moved: 1
         },
         {
@@ -189,8 +182,8 @@
         {
             label: "Teamcity",
             quadrant: 2,
-            ring: 0,
-            moved: 0
+            ring: 3,
+            moved: -1
         },
         {
             label: "Github Actions",
@@ -230,6 +223,12 @@
         },
         {
             label: "Auth0",
+            quadrant: 2,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Helm",
             quadrant: 2,
             ring: 1,
             moved: 1
@@ -288,6 +287,12 @@
             moved: 0
         },
         {
+            label: "EMQX",
+            quadrant: 1,
+            ring: 2,
+            moved: 1
+        },
+        {
             label: "AWS DynamoDB",
             quadrant: 1,
             ring: 2,
@@ -297,12 +302,6 @@
             label: "Prometheus",
             quadrant: 1,
             ring: 0,
-            moved: 0
-        },
-        {
-            label: "Firebase Realtime Database",
-            quadrant: 1,
-            ring: 2,
             moved: 0
         },
         {
@@ -347,6 +346,11 @@
         },
         {
             label: "Gradle",
+            quadrant: 3,
+            ring: 0,
+            moved: 0
+        }, {
+            label: "ADR",
             quadrant: 3,
             ring: 0,
             moved: 0
