@@ -51,7 +51,7 @@
             reason: "Complex relations and heavy duty SQL are not a good match for ORMs (see JPA on 'Hold'). <a href='https://www.jooq.org/' target='_blank'>jOOQ</a> is a typesafe SQL DSL for the java ecosystem that works best where you are not dealing with simple CRUD.",
             quadrant: 0,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "Python",
@@ -84,7 +84,7 @@
             label: "Spring Integration",
             quadrant: 0,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "Vuetify",
@@ -114,10 +114,10 @@
         },
         {
             label: "Spock",
-            reason: "<a href='http://spockframework.org/' target='_blank'>Spock</a> is a test and specification framework written in Groovy.<br>It integrates smoothly with Java and Kotlin and provides an intuitive :given :when :then test approach. The data tables for data driven tests are really convenient.",
+            reason: "Spock served us well in times of Java. Using Spock with Kotlin is cumbersome (e.g. no copy() methods), so we prefer vanilla JUnit. We miss data tables very much though... :-(",
             quadrant: 0,
             ring: 3,
-            moved: -1
+            moved: 0
         },
         {
             label: "socket.io",
@@ -152,6 +152,44 @@
             ring: 2,
             moved: 0
         },
+        {
+            label: "mockk",
+            quadrant: 0,
+            ring: 0,
+            moved: 1
+        },
+        {
+            label: "Mockito for Kotlin",
+            reason: "Mockito for Java is THE mocking framework. mockk seems to be the better fit for Kotlin though.",
+            quadrant: 0,
+            ring: 3,
+            moved: -1
+        },
+        {
+            label: "Custom Spring Boot Starter",
+            quadrant: 0,
+            ring: 2,
+            moved: 1
+        },
+        {
+            label: "Capacitor",
+            quadrant: 0,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Jest & Vue Test",
+            quadrant: 0,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "ArchUnit",
+            reason: "<a href='https://www.archunit.org/' target='_blank'>ArchUnit</a> is used to enforce architectural rules on our codebase. This includes package dependencies, cycles and other specialized rules.",
+            quadrant: 0,
+            ring: 1,
+            moved: 1
+        },
     ]
 
     const infrastructure = [
@@ -165,28 +203,31 @@
             label: "Sealed Secrets",
             quadrant: 2,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "Descheduler",
             quadrant: 2,
             ring: 1,
-            moved: 1
-        },
-        {
-            label: "Kustomize",
-            quadrant: 2,
-            ring: 0,
             moved: 0
         },
         {
-            label: "Teamcity",
+            label: "Kustomize",
+            reason: "Although kustomize is low-tech and easy to use, it becomes complex and error-prone for non-trivial deployments.",
             quadrant: 2,
             ring: 3,
             moved: -1
         },
         {
+            label: "Teamcity",
+            reason: "Teamcity served us well over the years, but newer projects are using Github Actions, which is easier to maintain and more fun to use.",
+            quadrant: 2,
+            ring: 3,
+            moved: 0
+        },
+        {
             label: "Github Actions",
+            reason: "Moving away from Teamcity, because Github Actions is easier to maintain and integrates well with the whole Github eco system (e.g. packages).",
             quadrant: 2,
             ring: 0,
             moved: 0
@@ -219,31 +260,31 @@
             label: "Traefik",
             quadrant: 2,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "Auth0",
             quadrant: 2,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "Helm",
             quadrant: 2,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "Kafka",
             quadrant: 2,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "cert-manager",
             quadrant: 2,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "Keycloak",
@@ -257,19 +298,18 @@
             ring: 3,
             moved: 0
         },
-        /* Access control for SSH and K8s management */
-        {
-            label: "Gravitational Teleport",
-            quadrant: 2,
-            ring: 2,
-            moved: 0
-        },
         /* Backup utility for k8s volumes */
         {
             label: "Bivac",
             quadrant: 2,
             ring: 2,
             moved: 0
+        },
+        {
+            label: "Shared private cluster",
+            quadrant: 2,
+            ring: 3,
+            moved: -1
         }
     ]
 
@@ -288,9 +328,10 @@
         },
         {
             label: "EMQX",
+            reason: "<a href='https://graphql.org/' target='_blank'>EMQX</a> is a MQTT broker written in Erlang, a language well-known for its excellent support of distributed computing. A <a href='https://ecsa2020.disim.univaq.it/details/ecsa-2020-industry-program/3/A-Comparison-of-MQTT-Brokers-for-Distributed-IoT-Edge-Computing' target='_blank'>recent study</a> emphasizes the benefits of EMQX compared to other brokers.",
             quadrant: 1,
             ring: 2,
-            moved: 1
+            moved: 0
         },
         {
             label: "AWS DynamoDB",
@@ -316,6 +357,12 @@
             quadrant: 1,
             ring: 0,
             moved: 0
+        },
+        {
+            label: "Hazelcast",
+            quadrant: 1,
+            ring: 1,
+            moved: 1
         },
     ]
 
@@ -374,6 +421,46 @@
             ring: 0,
             moved: 0
         },
+        {
+            label: "Pull-Request templates",
+            reason: "Practicing code reviews is a vital part of our software development process. Using pull request <a href='https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository' target='_blank'>templates</a> as a review checklist is something we find helpful.",
+            quadrant: 3,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Draft Pull-Requests",
+            reason: "Practicing code reviews is a vital part of our software development process. Using <a href='https://github.blog/2019-02-14-introducing-draft-pull-requests/' target='_blank'>draft</a> pull requests helps us get early feedback from our colleagues.",
+            quadrant: 3,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "C4 Architecture Documentation",
+            quadrant: 3,
+            ring: 2,
+            moved: 1
+        },
+        {
+            label: "HiveMQ Client",
+            quadrant: 3,
+            ring: 0,
+            moved: 1
+        },
+        {
+            label: "ktlint",
+            reason: "Linting and formatting should be simple and out-of-the way. This is what ktlint does best.",
+            quadrant: 3,
+            ring: 0,
+            moved: 1
+        },
+        {
+            label: "detekt",
+            reason: "Static code analysis for Kotlin. Noice.",
+            quadrant: 3,
+            ring: 0,
+            moved: 1
+        },
     ]
 
     radar_visualization({
@@ -385,12 +472,12 @@
             grid: "#bbb",
             inactive: "#ddd"
         },
-        title: "Smartsquare Tech Radar — 2020.12",
+        title: "Smartsquare Tech Radar — 2021.03",
         quadrants: [
             {name: "Languages and Frameworks"},
             {name: "Data Management"},
             {name: "Infrastructure"},
-            {name: "Tools"},
+            {name: "Tools and Techniques"},
         ],
         rings: [
             {name: "ADOPT", color: "#93c47d"},
