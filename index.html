@@ -81,12 +81,6 @@
             moved: 0
         },
         {
-            label: "Spring Integration",
-            quadrant: 0,
-            ring: 1,
-            moved: 0
-        },
-        {
             label: "Vuetify",
             quadrant: 0,
             ring: 0,
@@ -139,10 +133,16 @@
             moved: 0
         },
         {
-            label: "JPA",
+            label: "JPA for complex queries",
             reason: "JPA or ORM in general can be quite the hassle for complex data models and heavy duty SQL due to the Object-Relation Impedance Mismatch. Ted Neward once called it the <a href='http://blogs.tedneward.com/post/the-vietnam-of-computer-science/' target='_blank'>Vietnam of Computer Science</a> for this exact reason. Since we usually don't build simple CRUD systems, JPA is rarely a good solution.",
             quadrant: 0,
             ring: 3,
+            moved: 0
+        },
+        {
+            label: "JPA for CRUD",
+            quadrant: 0,
+            ring: 0,
             moved: 0
         },
         {
@@ -156,39 +156,39 @@
             label: "mockk",
             quadrant: 0,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "Mockito for Kotlin",
             reason: "Mockito for Java is THE mocking framework. mockk seems to be the better fit for Kotlin though.",
             quadrant: 0,
             ring: 3,
-            moved: -1
+            moved: 0
         },
         {
             label: "Custom Spring Boot Starter",
             quadrant: 0,
             ring: 2,
-            moved: 1
+            moved: 0
         },
         {
             label: "Capacitor",
             quadrant: 0,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "Jest & Vue Test",
             quadrant: 0,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "ArchUnit",
             reason: "<a href='https://www.archunit.org/' target='_blank'>ArchUnit</a> is used to enforce architectural rules on our codebase. This includes package dependencies, cycles and other specialized rules.",
             quadrant: 0,
             ring: 1,
-            moved: 1
+            moved: 0
         },
     ]
 
@@ -216,7 +216,7 @@
             reason: "Although kustomize is low-tech and easy to use, it becomes complex and error-prone for non-trivial deployments.",
             quadrant: 2,
             ring: 3,
-            moved: -1
+            moved: 0
         },
         {
             label: "Teamcity",
@@ -239,6 +239,12 @@
             moved: 0
         },
         {
+            label: "Werf",
+            quadrant: 2,
+            ring: 1,
+            moved: 1
+        },
+        {
             label: "Digital Ocean",
             quadrant: 2,
             ring: 0,
@@ -249,6 +255,12 @@
             quadrant: 2,
             ring: 0,
             moved: 0
+        },
+        {
+            label: "Docker-Compose",
+            quadrant: 2,
+            ring: 0,
+            moved: 1
         },
         {
             label: "AWS Lambda",
@@ -272,7 +284,7 @@
             label: "Helm",
             quadrant: 2,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "Kafka",
@@ -309,7 +321,7 @@
             label: "Shared private cluster",
             quadrant: 2,
             ring: 3,
-            moved: -1
+            moved: 0
         }
     ]
 
@@ -331,7 +343,7 @@
             reason: "<a href='https://graphql.org/' target='_blank'>EMQX</a> is a MQTT broker written in Erlang, a language well-known for its excellent support of distributed computing. A <a href='https://ecsa2020.disim.univaq.it/details/ecsa-2020-industry-program/3/A-Comparison-of-MQTT-Brokers-for-Distributed-IoT-Edge-Computing' target='_blank'>recent study</a> emphasizes the benefits of EMQX compared to other brokers.",
             quadrant: 1,
             ring: 2,
-            moved: 1
+            moved: 0
         },
         {
             label: "AWS DynamoDB",
@@ -362,8 +374,15 @@
             label: "Hazelcast",
             quadrant: 1,
             ring: 1,
+            moved: 0
+        },
+        {
+            label: "Redis",
+            quadrant: 1,
+            ring: 2,
             moved: 1
         },
+
     ]
 
     const tools = [
@@ -425,14 +444,14 @@
             label: "Pull-Request templates",
             reason: "Practicing code reviews is a vital part of our software development process. Using pull request <a href='https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository' target='_blank'>templates</a> as a review checklist is something we find helpful.",
             quadrant: 3,
-            ring: 1,
+            ring: 0,
             moved: 1
         },
         {
             label: "Draft Pull-Requests",
             reason: "Practicing code reviews is a vital part of our software development process. Using <a href='https://github.blog/2019-02-14-introducing-draft-pull-requests/' target='_blank'>draft</a> pull requests helps us get early feedback from our colleagues.",
             quadrant: 3,
-            ring: 1,
+            ring: 0,
             moved: 1
         },
         {
@@ -440,27 +459,51 @@
             reason: "Although <a href='https://www.arc42.org' target='_blank'>arc42</a> served us well in the past, we want to look at a more developer centric <a href='https://c4model.com/' target='_blank'>tool suite</a> to maintain our architecture docs.",
             quadrant: 3,
             ring: 2,
-            moved: 1
+            moved: 0
         },
         {
             label: "HiveMQ Client",
             reason: "The <a href='https://github.com/hivemq/hivemq-mqtt-client' target='_blank'>HiveMQ Client</a> is our MQTT client of choice. It supports async and blocking out-of-the-box and is highly configurable.",
             quadrant: 3,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "ktlint",
             reason: "Linting and formatting should be simple and out-of-the way. This is what ktlint does best.",
             quadrant: 3,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "detekt",
             reason: "Static code analysis for Kotlin. Noice.",
             quadrant: 3,
             ring: 0,
+            moved: 0
+        },
+        {
+            label: "Yeoman",
+            quadrant: 3,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "MQTT X",
+            quadrant: 3,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Wireframing",
+            quadrant: 3,
+            ring: 0,
+            moved: 1
+        },
+        {
+            label: "Balsamiq Cloud",
+            quadrant: 3,
+            ring: 2,
             moved: 1
         },
     ]
@@ -474,7 +517,7 @@
             grid: "#bbb",
             inactive: "#ddd"
         },
-        title: "Smartsquare Tech Radar — 2021.03",
+        title: "Smartsquare Tech Radar — 2021.06",
         quadrants: [
             {name: "Languages and Frameworks"},
             {name: "Data Management"},
