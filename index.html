@@ -34,6 +34,18 @@
             moved: 0
         },
         {
+            label: "MQTT-Starter",
+            quadrant: 0,
+            ring: 0,
+            moved: 1
+        },
+        {
+            label: "Redis Emitter",
+            quadrant: 0,
+            ring: 0,
+            moved: 1
+        },
+        {
             label: "Kotlin",
             reason: "<a href='https://kotlinlang.org/' target='_blank'>Kotlin</a> is Java on steroids. Data classes, immutability by default, null safety and extension functions are just a few real-world productivity features that already saved us hours of work.",
             quadrant: 0,
@@ -41,10 +53,10 @@
             moved: 0
         },
         {
-            label: "Kluent",
+            label: "Rust",
             quadrant: 0,
-            ring: 0,
-            moved: 0
+            ring: 1,
+            moved: 1
         },
         {
             label: "jOOQ",
@@ -56,12 +68,6 @@
         {
             label: "Python",
             reason: "<a href='https://www.python.org/' target='_blank'>Python</a> is an interpreted, general-purpose programming language that supports several programming paradigms. When this language is mastered, applications can be written extremly quick due to the huge ecosystem. This language is often the choice in development competitions. <br>We use it in a customer project for a small microservice that exports data out of an Oracle database.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Vert.X",
             quadrant: 0,
             ring: 0,
             moved: 0
@@ -153,19 +159,6 @@
             moved: 0
         },
         {
-            label: "mockk",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Mockito for Kotlin",
-            reason: "Mockito for Java is THE mocking framework. mockk seems to be the better fit for Kotlin though.",
-            quadrant: 0,
-            ring: 3,
-            moved: 0
-        },
-        {
             label: "Custom Spring Boot Starter",
             quadrant: 0,
             ring: 2,
@@ -180,15 +173,8 @@
         {
             label: "Jest & Vue Test",
             quadrant: 0,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "ArchUnit",
-            reason: "<a href='https://www.archunit.org/' target='_blank'>ArchUnit</a> is used to enforce architectural rules on our codebase. This includes package dependencies, cycles and other specialized rules.",
-            quadrant: 0,
-            ring: 1,
-            moved: 0
+            ring: 0,
+            moved: 1
         },
     ]
 
@@ -241,50 +227,32 @@
         {
             label: "Werf",
             quadrant: 2,
-            ring: 1,
+            ring: 0,
             moved: 1
-        },
-        {
-            label: "Digital Ocean",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Docker",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
         },
         {
             label: "Docker-Compose",
             quadrant: 2,
             ring: 0,
-            moved: 1
-        },
-        {
-            label: "AWS Lambda",
-            quadrant: 2,
-            ring: 2,
             moved: 0
         },
         {
-            label: "Traefik",
-            quadrant: 2,
-            ring: 1,
-            moved: 0
+          label: "Traefik",
+          quadrant: 2,
+          ring: 0,
+          moved: 1
         },
         {
-            label: "Auth0",
-            quadrant: 2,
-            ring: 1,
-            moved: 0
+          label: "Tekton",
+          quadrant: 2,
+          ring: 1,
+          moved: 1
         },
         {
             label: "Helm",
             quadrant: 2,
-            ring: 1,
-            moved: 0
+            ring: 0,
+            moved: 1
         },
         {
             label: "Kafka",
@@ -305,7 +273,7 @@
             moved: 0
         },
         {
-            label: "Server-Sent Events",
+            label: "Server-Sent-Events",
             quadrant: 2,
             ring: 3,
             moved: 0
@@ -317,12 +285,6 @@
             ring: 2,
             moved: 0
         },
-        {
-            label: "Shared private cluster",
-            quadrant: 2,
-            ring: 3,
-            moved: 0
-        }
     ]
 
     const dataManagement = [
@@ -342,14 +304,8 @@
             label: "EMQX",
             reason: "<a href='https://graphql.org/' target='_blank'>EMQX</a> is a MQTT broker written in Erlang, a language well-known for its excellent support of distributed computing. A <a href='https://ecsa2020.disim.univaq.it/details/ecsa-2020-industry-program/3/A-Comparison-of-MQTT-Brokers-for-Distributed-IoT-Edge-Computing' target='_blank'>recent study</a> emphasizes the benefits of EMQX compared to other brokers.",
             quadrant: 1,
-            ring: 2,
-            moved: 0
-        },
-        {
-            label: "AWS DynamoDB",
-            quadrant: 1,
-            ring: 2,
-            moved: 0
+            ring: 1,
+            moved: 1
         },
         {
             label: "Prometheus",
@@ -379,10 +335,9 @@
         {
             label: "Redis",
             quadrant: 1,
-            ring: 2,
+            ring: 1,
             moved: 1
         },
-
     ]
 
     const tools = [
@@ -393,10 +348,22 @@
             moved: 0
         },
         {
-            label: "Swagger",
+            label: "OpenAPI",
             quadrant: 3,
             ring: 0,
             moved: 0
+        },
+        {
+            label: "AsyncAPI",
+            quadrant: 3,
+            ring: 1,
+            moved: 1
+        },
+        {
+            label: "Zenhub",
+            quadrant: 3,
+            ring: 1,
+            moved: 1
         },
         {
             label: "README.md",
@@ -441,18 +408,18 @@
             moved: 0
         },
         {
-            label: "Pull-Request templates",
+            label: "Pull-Request Templates",
             reason: "Practicing code reviews is a vital part of our software development process. Using pull request <a href='https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository' target='_blank'>templates</a> as a review checklist is something we find helpful.",
             quadrant: 3,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "Draft Pull-Requests",
             reason: "Practicing code reviews is a vital part of our software development process. Using <a href='https://github.blog/2019-02-14-introducing-draft-pull-requests/' target='_blank'>draft</a> pull requests helps us get early feedback from our colleagues.",
             quadrant: 3,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "C4 Architecture Documentation",
@@ -469,42 +436,40 @@
             moved: 0
         },
         {
-            label: "ktlint",
-            reason: "Linting and formatting should be simple and out-of-the way. This is what ktlint does best.",
+            label: "Static Code Analysis",
             quadrant: 3,
             ring: 0,
             moved: 0
         },
         {
-            label: "detekt",
-            reason: "Static code analysis for Kotlin. Noice.",
+            label: "Commit Hooks",
             quadrant: 3,
             ring: 0,
-            moved: 0
+            moved: 1
         },
         {
             label: "Yeoman",
             quadrant: 3,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "MQTT X",
             quadrant: 3,
             ring: 1,
-            moved: 1
+            moved: 0
         },
         {
             label: "Wireframing",
             quadrant: 3,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "Balsamiq Cloud",
             quadrant: 3,
             ring: 2,
-            moved: 1
+            moved: 0
         },
     ]
 
@@ -517,7 +482,7 @@
             grid: "#bbb",
             inactive: "#ddd"
         },
-        title: "Smartsquare Tech Radar — 2021.06",
+        title: "Smartsquare Tech Radar — 2021.09",
         quadrants: [
             {name: "Languages and Frameworks"},
             {name: "Data Management"},
