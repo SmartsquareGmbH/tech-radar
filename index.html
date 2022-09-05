@@ -62,15 +62,8 @@
             label: "jOOQ",
             reason: "Complex relations and heavy duty SQL are not a good match for ORMs (see JPA on 'Hold'). <a href='https://www.jooq.org/' target='_blank'>jOOQ</a> is a typesafe SQL DSL for the java ecosystem that works best where you are not dealing with simple CRUD.",
             quadrant: 0,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Python",
-            reason: "<a href='https://www.python.org/' target='_blank'>Python</a> is an interpreted, general-purpose programming language that supports several programming paradigms. When this language is mastered, applications can be written extremly quick due to the huge ecosystem. This language is often the choice in development competitions. <br>We use it in a customer project for a small microservice that exports data out of an Oracle database.",
-            quadrant: 0,
             ring: 0,
-            moved: 0
+            moved: 1
         },
         {
             label: "Spring Boot",
@@ -130,7 +123,7 @@
             reason: "Springdoc java library helps to automate the generation of API documentation using spring boot projects. We use this for our publicly available http interfaces.",
             quadrant: 0,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "socket.io",
@@ -168,8 +161,8 @@
             label: "GraphQL",
             reason: "<a href='https://graphql.org/' target='_blank'>GraphQL</a> is a query language for your APIs. Opposing to REST calls this technology allows the client to customize the requests and ask for the required information based on a query. The execution side on the backend (resolvers) is fully decoupled from the requesting side.<br>This sounds like a promising tool when providing an application that needs a more flexible interface between frontend and backend.",
             quadrant: 0,
-            ring: 1,
-            moved: 0
+            ring: 0,
+            moved: 1
         },
         {
             label: "Angular",
@@ -265,6 +258,27 @@
             quadrant: 2,
             ring: 0,
             moved: 0
+        },
+        {
+            label: "Hosted IAM",
+            reason: "We lately moved over to hosted identity management because it seems to be more cost efficient than self-hosted services (depends on the size of course).",
+            quadrant: 2,
+            ring: 0,
+            moved: 1
+        },
+        {
+            label: "Digital Ocean",
+            reason: "We run most of our projects using digital ocean services like managed clusters, databases, apps and spaces.",
+            quadrant: 2,
+            ring: 0,
+            moved: 1
+        },
+        {
+            label: "Azure IoT Hub",
+            reason: "We plan to try the Azure IoT Hub in the future.",
+            quadrant: 2,
+            ring: 2,
+            moved: 1
         },
         {
             label: "Github Packages",
@@ -529,7 +543,7 @@
             grid: "#bbb",
             inactive: "#ddd"
         },
-        title: "Smartsquare Tech Radar — 2022.06",
+        title: "Smartsquare Tech Radar — 2022.09",
         quadrants: [
             {name: "Languages and Frameworks"},
             {name: "Data Management"},
