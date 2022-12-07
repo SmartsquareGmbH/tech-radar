@@ -27,20 +27,20 @@
             moved: 0
         },
         {
+            label: "Flutter",
+            quadrant: 0,
+            ring: 2,
+            moved: 1
+        },
+        {
+            label: "Tailwind CSS",
+            quadrant: 0,
+            ring: 2,
+            moved: 1
+        },
+        {
             label: "Nuxt.js",
             reason: "<a href='https://nuxtjs.org/' target='_blank'>Nuxt.js</a> takes the last pieces boilerplate off your shoulders. Manual implementation of your authentication, the routing and recurring http error handling belong to the past.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "MQTT-Starter",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Redis Emitter",
             quadrant: 0,
             ring: 0,
             moved: 0
@@ -53,17 +53,11 @@
             moved: 0
         },
         {
-            label: "Rust",
-            quadrant: 0,
-            ring: 1,
-            moved: 0
-        },
-        {
             label: "jOOQ",
             reason: "Complex relations and heavy duty SQL are not a good match for ORMs (see JPA on 'Hold'). <a href='https://www.jooq.org/' target='_blank'>jOOQ</a> is a typesafe SQL DSL for the java ecosystem that works best where you are not dealing with simple CRUD.",
             quadrant: 0,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "Spring Boot",
@@ -89,13 +83,6 @@
             label: "Vuetify",
             quadrant: 0,
             ring: 0,
-            moved: 0
-        },
-        {
-            label: "Arrow",
-            reason: "<a href='https://arrow-kt.io/' target='_blank'>Arrow</a> is a library that extends the Kotlin standard library for functional data structures like Either or more advanced ones like Optics. It looks a bit like the library Vavr for Java on steroids.<br>We have not yet used Arrow in a customer project so we are not sure how this library performs.",
-            quadrant: 0,
-            ring: 2,
             moved: 0
         },
         {
@@ -162,27 +149,6 @@
             reason: "<a href='https://graphql.org/' target='_blank'>GraphQL</a> is a query language for your APIs. Opposing to REST calls this technology allows the client to customize the requests and ask for the required information based on a query. The execution side on the backend (resolvers) is fully decoupled from the requesting side.<br>This sounds like a promising tool when providing an application that needs a more flexible interface between frontend and backend.",
             quadrant: 0,
             ring: 0,
-            moved: 1
-        },
-        {
-            label: "Angular",
-            reason: null,
-            quadrant: 0,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "JavaFX",
-            reason: null,
-            quadrant: 0,
-            ring: 1,
-            moved: -1
-        },
-        {
-            label: "compose-jb",
-            reason: null,
-            quadrant: 0,
-            ring: 2,
             moved: 0
         },
         {
@@ -206,12 +172,6 @@
             moved: 0
         },
         {
-            label: "Capacitor",
-            quadrant: 0,
-            ring: 1,
-            moved: 0
-        },
-        {
             label: "Jest & Vue Test",
             quadrant: 0,
             ring: 0,
@@ -230,12 +190,6 @@
             label: "Sealed Secrets",
             quadrant: 2,
             ring: 0,
-            moved: 0
-        },
-        {
-            label: "Descheduler",
-            quadrant: 2,
-            ring: 1,
             moved: 0
         },
         {
@@ -264,20 +218,26 @@
             reason: "We lately moved over to hosted identity management because it seems to be more cost efficient than self-hosted services (depends on the size of course).",
             quadrant: 2,
             ring: 0,
-            moved: 1
+            moved: 0
         },
         {
             label: "Digital Ocean",
             reason: "We run most of our projects using digital ocean services like managed clusters, databases, apps and spaces.",
             quadrant: 2,
             ring: 0,
+            moved: 0
+        },
+        {
+            label: "Cloud Native Development",
+            reason: "We experiment with cloud native development to reduce our operation costs.",
+            quadrant: 2,
+            ring: 1,
             moved: 1
         },
         {
-            label: "Azure IoT Hub",
-            reason: "We plan to try the Azure IoT Hub in the future.",
+            label: "Sentry",
             quadrant: 2,
-            ring: 2,
+            ring: 1,
             moved: 1
         },
         {
@@ -307,19 +267,13 @@
         {
           label: "Tekton",
           quadrant: 2,
-          ring: 1,
-          moved: 0
+          ring: 0,
+          moved: 1
         },
         {
             label: "Helm",
             quadrant: 2,
             ring: 0,
-            moved: 0
-        },
-        {
-            label: "Kafka",
-            quadrant: 2,
-            ring: 1,
             moved: 0
         },
         {
@@ -331,8 +285,8 @@
         {
             label: "Keycloak",
             quadrant: 2,
-            ring: 0,
-            moved: 0
+            ring: 3,
+            moved: 1
         },
         {
             label: "Server-Sent-Events",
@@ -350,6 +304,25 @@
     ]
 
     const dataManagement = [
+        {
+          label: "Azure IoT Hub",
+          reason: "We plan to try the Azure IoT Hub in the future.",
+          quadrant: 1,
+          ring: 1,
+          moved: 1
+        },
+        {
+          label: "Google Pub/Sub",
+          quadrant: 1,
+          ring: 1,
+          moved: 1
+        },
+        {
+          label: "Protobuf",
+          quadrant: 1,
+          ring: 1,
+          moved: 1
+        },
         {
             label: "Mosquitto",
             quadrant: 1,
@@ -382,6 +355,12 @@
             moved: 0
         },
         {
+            label: "QuestDB",
+            quadrant: 1,
+            ring: 2,
+            moved: 1
+        },
+        {
             label: "PostgreSQL",
             reason: "<a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a> is an object-relational database system. It has a nice &#128024;.",
             quadrant: 1,
@@ -389,20 +368,20 @@
             moved: 0
         },
         {
-            label: "Hazelcast",
-            quadrant: 1,
-            ring: 1,
-            moved: 0
-        },
-        {
             label: "Redis",
             quadrant: 1,
-            ring: 1,
-            moved: 0
+            ring: 0,
+            moved: 1
         },
     ]
 
     const tools = [
+        {
+            label: "Figma",
+            quadrant: 3,
+            ring: 0,
+            moved: 1
+        },
         {
             label: "Squit",
             quadrant: 3,
@@ -419,24 +398,6 @@
             label: "AsyncAPI",
             quadrant: 3,
             ring: 1,
-            moved: 0
-        },
-        {
-            label: "Zenhub",
-            quadrant: 3,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Testplan",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "README.md",
-            quadrant: 3,
-            ring: 0,
             moved: 0
         },
         {
@@ -459,8 +420,8 @@
         {
             label: "Yarn 2",
             quadrant: 3,
-            ring: 2,
-            moved: 0
+            ring: 1,
+            moved: 1
         },
         {
             label: "Maven",
@@ -476,55 +437,10 @@
             moved: 0
         },
         {
-            label: "Pull-Request Templates",
-            reason: "Practicing code reviews is a vital part of our software development process. Using pull request <a href='https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository' target='_blank'>templates</a> as a review checklist is something we find helpful.",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Draft Pull-Requests",
-            reason: "Practicing code reviews is a vital part of our software development process. Using <a href='https://github.blog/2019-02-14-introducing-draft-pull-requests/' target='_blank'>draft</a> pull requests helps us get early feedback from our colleagues.",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "HiveMQ Client",
-            reason: "The <a href='https://github.com/hivemq/hivemq-mqtt-client' target='_blank'>HiveMQ Client</a> is our MQTT client of choice. It supports async and blocking out-of-the-box and is highly configurable.",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Static Code Analysis",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Commit Hooks",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Yeoman",
-            quadrant: 3,
-            ring: 1,
-            moved: 0
-        },
-        {
             label: "MQTT X",
             quadrant: 3,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Wireframing",
-            quadrant: 3,
             ring: 0,
-            moved: 0
+            moved: 1
         },
         {
             label: "Balsamiq Cloud",
@@ -543,7 +459,7 @@
             grid: "#bbb",
             inactive: "#ddd"
         },
-        title: "Smartsquare Tech Radar — 2022.09",
+        title: "Smartsquare Tech Radar — 2022.12",
         quadrants: [
             {name: "Languages and Frameworks"},
             {name: "Data Management"},
