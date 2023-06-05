@@ -246,10 +246,10 @@
             moved: 0
         },
         {
-          label: "Traefik",
-          quadrant: 2,
-          ring: 0,
-          moved: 0
+            label: "Traefik",
+            quadrant: 2,
+            ring: 0,
+            moved: 0
         },
         {
             label: "Helm",
@@ -292,23 +292,23 @@
 
     const dataManagement = [
         {
-          label: "Azure IoT Hub",
-          reason: "While Azure IoT Hub works well for simple devices that only post a single metric, we find it insufficient for more complex use cases and prefer to use a dedicated broker. Nevertheless, we've found the provisioning service to be highly reliable, despite the API being somewhat inconvenient.",
-          quadrant: 1,
-          ring: 1,
-          moved: 0
+            label: "Azure IoT Hub",
+            reason: "While Azure IoT Hub works well for simple devices that only post a single metric, we find it insufficient for more complex use cases and prefer to use a dedicated broker. Nevertheless, we've found the provisioning service to be highly reliable, despite the API being somewhat inconvenient.",
+            quadrant: 1,
+            ring: 1,
+            moved: 0
         },
         {
-          label: "Google Pub/Sub",
-          quadrant: 1,
-          ring: 1,
-          moved: 0
+            label: "Google Pub/Sub",
+            quadrant: 1,
+            ring: 1,
+            moved: 0
         },
         {
-          label: "Protobuf",
-          quadrant: 1,
-          ring: 1,
-          moved: 0
+            label: "Protobuf",
+            quadrant: 1,
+            ring: 1,
+            moved: 0
         },
         {
             label: "Mosquitto",
@@ -320,14 +320,21 @@
             label: "VerneMQ",
             quadrant: 1,
             ring: 3,
-            moved: -1
+            moved: 0
         },
         {
             label: "EMQX",
             reason: "<a href='https://graphql.org/' target='_blank'>EMQX</a> is a MQTT broker written in Erlang, a language well-known for its excellent support of distributed computing. A <a href='https://ecsa2020.disim.univaq.it/details/ecsa-2020-industry-program/3/A-Comparison-of-MQTT-Brokers-for-Distributed-IoT-Edge-Computing' target='_blank'>recent study</a> emphasizes the benefits of EMQX compared to other brokers.",
             quadrant: 1,
+            ring: 3,
+            moved: 1
+        },
+        {
+            label: "Hosted Broker",
+            reason: "Operating a distributed message broker is an arduous task that demands a significant amount of time. We have reached a juncture where we no longer wish to continue managing it ourselves and, if feasible, would prefer utilizing hosted brokers.",
+            quadrant: 1,
             ring: 0,
-            moved: 0
+            moved: 1
         },
         {
             label: "Prometheus",
