@@ -24,6 +24,8 @@ jobs:
       - run: pnpm verify
       - if: github.ref == 'refs/heads/main'
         run: pnpm build
+        env:
+          BASE_URL: /tech-radar
       - if: github.ref == 'refs/heads/main'
         name: Upload page
         uses: actions/upload-pages-artifact@v3
