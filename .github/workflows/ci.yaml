@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          cache: 'pnpm'
+          cache: "pnpm"
       - run: pnpm install
       - run: pnpm verify
       - if: github.ref == 'refs/heads/main'
