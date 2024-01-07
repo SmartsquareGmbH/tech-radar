@@ -25,9 +25,6 @@ jobs:
       - if: github.ref == 'refs/heads/main'
         run: pnpm build
       - if: github.ref == 'refs/heads/main'
-        name: Setup Pages
-        uses: actions/configure-pages@v4
-      - if: github.ref == 'refs/heads/main'
         name: Upload page
         uses: actions/upload-pages-artifact@v3
         with:
