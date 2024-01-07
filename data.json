@@ -1,0 +1,387 @@
+{
+  "languagesAndFrameworks": [
+    {
+      "label": "Vue.js",
+      "reason": "<a href='https://vuejs.org/' target='_blank'>Vue.js</a> is a lightweight and pragmatic approach to single-page applications that gets out of your way and just works.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Flutter",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Tailwind CSS + Headless UI",
+      "ring": 1,
+      "moved": 0
+    },
+    {
+      "label": "Nuxt.js",
+      "reason": "<a href='https://nuxtjs.org/' target='_blank'>Nuxt.js</a> takes the last pieces boilerplate off your shoulders. Manual implementation of your authentication, the routing and recurring http error handling belong to the past.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Kotlin",
+      "reason": "<a href='https://kotlinlang.org/' target='_blank'>Kotlin</a> is Java on steroids. Data classes, immutability by default, null safety and extension functions are just a few real-world productivity features that already saved us hours of work.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "jOOQ",
+      "reason": "Complex relations and heavy duty SQL are not a good match for ORMs (see JPA on 'Hold'). <a href='https://www.jooq.org/' target='_blank'>jOOQ</a> is a typesafe SQL DSL for the java ecosystem that works best where you are not dealing with simple CRUD.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Spring Boot",
+      "reason": "<a href='https://spring.io/projects/spring-boot/' target='_blank'>Spring Boot</a> makes Spring more accessible to the newbie Spring developer and gets out of the way for the experienced developer. It comes with autoconfiguration with sensible defaults, monitoring and logging solutions and embedded servlet container out of the box. Many third party tools and frameworks (databases, message queues, email, you name it) are already supported or can easily be adapted. Spring Boot is our go to framework for building standalone or microservice systems.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "NestJS",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Bun",
+      "ring": 2,
+      "moved": 1
+    },
+    {
+      "label": "Spring Integration for MQTT",
+      "reason": "Spring Integration is a fantastic tool for some use cases. In our case, however, we experienced serious performance problems when we used it in a high-volume application.",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "Vuetify",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Testcontainers",
+      "reason": "Testcontainers is part of our toolkit to ensure the quality of our applications within our continuous deployment pipelines.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Typescript",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Spock",
+      "reason": "Spock served us well in times of Java. Using Spock with Kotlin is cumbersome (e.g. no copy() methods), so we prefer vanilla JUnit. We miss data tables very much though... :-(",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "Springdoc",
+      "reason": "Springdoc java library helps to automate the generation of API documentation using spring boot projects. We use this for our publicly available http interfaces.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "socket.io",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Thymeleaf",
+      "reason": "<a href='https://www.thymeleaf.org/' target='_blank'>Thymeleaf</a> is a server-side rendered Java templating engine. It's focus is on templates that can be rendered by browsers even though no backend server is running. This sounds promising as a UI designer can work independently from development. <br>In our project where we used it, this never happened. UX design and frontend development was done at the same time by the same person. So the templates are not so concise as they could be.",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "Java",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "JPA",
+      "reason": "JPA or ORM in general can be quite the hassle for complex data models and heavy duty SQL due to the Object-Relation Impedance Mismatch. Ted Neward once called it the <a href='http://blogs.tedneward.com/post/the-vietnam-of-computer-science/' target='_blank'>Vietnam of Computer Science</a> for this exact reason. Since we usually don't build simple CRUD systems, JPA is rarely a good solution.",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "GraphQL",
+      "reason": "<a href='https://graphql.org/' target='_blank'>GraphQL</a> is a query language for your APIs. Opposing to REST calls this technology allows the client to customize the requests and ask for the required information based on a query. The execution side on the backend (resolvers) is fully decoupled from the requesting side.<br>This sounds like a promising tool when providing an application that needs a more flexible interface between frontend and backend.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Zalando Logbook",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Custom Spring Boot Starter",
+      "ring": 2,
+      "moved": 0
+    },
+    {
+      "label": "Jest",
+      "ring": 3,
+      "moved": -1
+    },
+    {
+      "label": "vitest",
+      "ring": 0,
+      "moved": 1
+    },
+    {
+      "label": "Playwright",
+      "ring": 1,
+      "moved": 1
+    }
+  ],
+  "dataManagement": [
+    {
+      "label": "Azure IoT Hub",
+      "reason": "While Azure IoT Hub works well for simple devices that only post a single metric, we find it insufficient for more complex use cases and prefer to use a dedicated broker. Nevertheless, we've found the provisioning service to be highly reliable, despite the API being somewhat inconvenient.",
+      "ring": 1,
+      "moved": 0
+    },
+    {
+      "label": "Google Pub/Sub",
+      "ring": 1,
+      "moved": 0
+    },
+    {
+      "label": "Protobuf",
+      "ring": 1,
+      "moved": 0
+    },
+    {
+      "label": "Hosted Broker",
+      "reason": "Operating a distributed message broker is an arduous task that demands a significant amount of time. We have reached a juncture where we no longer wish to continue managing it ourselves and, if feasible, would prefer utilizing hosted brokers.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Prometheus",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "TimescaleDB",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "QuestDB",
+      "ring": 2,
+      "moved": 0
+    },
+    {
+      "label": "PostgreSQL",
+      "reason": "<a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a> is an object-relational database system. It has a nice &#128024;.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Redis",
+      "ring": 0,
+      "moved": 0
+    }
+  ],
+  "infrastructure": [
+    {
+      "label": "Kubernetes",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Sealed Secrets",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Kustomize",
+      "reason": "Although kustomize is low-tech and easy to use, it becomes complex and error-prone for non-trivial deployments.",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "Teamcity",
+      "reason": "Teamcity served us well over the years, but newer projects are using Github Actions, which is easier to maintain and more fun to use.",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "Github Actions",
+      "reason": "Moving away from Teamcity, because Github Actions is easier to maintain and integrates well with the whole Github eco system (e.g. packages).",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Hosted IAM",
+      "reason": "We lately moved over to hosted identity management because it seems to be more cost efficient than self-hosted services (depends on the size of course).",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Digital Ocean",
+      "reason": "We run most of our projects using digital ocean services like managed clusters, databases, apps and spaces.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Cloud Native Development",
+      "reason": "We experiment with cloud native development to reduce our operation costs.",
+      "ring": 1,
+      "moved": 0
+    },
+    {
+      "label": "Sentry",
+      "ring": 0,
+      "moved": 1
+    },
+    {
+      "label": "Grafana (Cloud)",
+      "ring": 1,
+      "moved": 1
+    },
+    {
+      "label": "Github Packages",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Werf",
+      "ring": 3,
+      "moved": 1
+    },
+    {
+      "label": "Docker-Compose",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Traefik",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Helm",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Terraform",
+      "ring": 1,
+      "moved": 1
+    },
+    {
+      "label": "cert-manager",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Keycloak",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "Server-Sent-Events",
+      "ring": 3,
+      "moved": 0
+    }
+  ],
+  "tools": [
+    {
+      "label": "Renovate",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Jacoco",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Figma",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Squit",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "OpenAPI",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "AsyncAPI",
+      "ring": 1,
+      "moved": 0
+    },
+    {
+      "label": "k9s",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Gradle",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "ADR",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Yarn Next",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "pnpm",
+      "ring": 0,
+      "moved": 1
+    },
+    {
+      "label": "Maven",
+      "reason": "<a href='https://maven.apache.org/' target='_blank'>Apache Maven</a> is a solid, well proven and highly extensible build tool used in the Java ecosystem.<br>It is tedious to write and has a build lifecycle with phases no sane person can fully grasp. But it does the job.",
+      "ring": 3,
+      "moved": 0
+    },
+    {
+      "label": "JMeter",
+      "ring": 3,
+      "moved": -1
+    },
+    {
+      "label": "Gatling",
+      "ring": 1,
+      "moved": 1
+    },
+    {
+      "label": "AI coding tools",
+      "ring": 0,
+      "moved": 1
+    },
+    {
+      "label": "Skaffold",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "MQTT X",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Balsamiq Cloud",
+      "ring": 0,
+      "moved": 0
+    }
+  ]
+}

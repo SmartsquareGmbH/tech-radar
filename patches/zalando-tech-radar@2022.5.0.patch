@@ -1,0 +1,15 @@
+diff --git a/docs/radar.js b/docs/radar.js
+index 1e4f4c5af6fa2e2269c5edd1882de485850d99f9..00a3890aec1351786af942d26701d432f3118758 100644
+--- a/docs/radar.js
++++ b/docs/radar.js
+@@ -20,8 +20,9 @@
+ // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ // THE SOFTWARE.
+
++import * as d3 from "d3"
+
+-function radar_visualization(config) {
++export function radar_visualization(config) {
+
+   // custom random number generator, to make random sequence reproducible
+   // source: https://stackoverflow.com/questions/521295

@@ -1,562 +1,71 @@
-<html>
-
-<head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smartsquare Tech Radar</title>
-    <link rel="shortcut icon" href="./favicon.png">
+    <link rel="stylesheet" href="node_modules/zalando-tech-radar/docs/radar.css" />
+    <link rel="stylesheet" href="normalize.css" />
+  </head>
 
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="radar.js"></script>
+  <body>
+    <div id="canvas">
+      <svg id="radar" style="z-index: -1" />
+    </div>
 
-    <link rel="stylesheet" href="radar.css">
-</head>
-
-<body>
-
-<div id="canvas">
-    <svg id="radar" style="z-index: -1;"></svg>
-</div>
-
-<script>
-    const languagesAndFrameworks = [
-        {
-            label: "Vue.js",
-            reason: "<a href='https://vuejs.org/' target='_blank'>Vue.js</a> is a lightweight and pragmatic approach to single-page applications that gets out of your way and just works.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Flutter",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Tailwind CSS + Headless UI",
-            quadrant: 0,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Nuxt.js",
-            reason: "<a href='https://nuxtjs.org/' target='_blank'>Nuxt.js</a> takes the last pieces boilerplate off your shoulders. Manual implementation of your authentication, the routing and recurring http error handling belong to the past.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Kotlin",
-            reason: "<a href='https://kotlinlang.org/' target='_blank'>Kotlin</a> is Java on steroids. Data classes, immutability by default, null safety and extension functions are just a few real-world productivity features that already saved us hours of work.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "jOOQ",
-            reason: "Complex relations and heavy duty SQL are not a good match for ORMs (see JPA on 'Hold'). <a href='https://www.jooq.org/' target='_blank'>jOOQ</a> is a typesafe SQL DSL for the java ecosystem that works best where you are not dealing with simple CRUD.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Spring Boot",
-            reason: "<a href='https://spring.io/projects/spring-boot/' target='_blank'>Spring Boot</a> makes Spring more accessible to the newbie Spring developer and gets out of the way for the experienced developer. It comes with autoconfiguration with sensible defaults, monitoring and logging solutions and embedded servlet container out of the box. Many third party tools and frameworks (databases, message queues, email, you name it) are already supported or can easily be adapted. Spring Boot is our go to framework for building standalone or microservice systems.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "NestJS",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Bun",
-            quadrant: 0,
-            ring: 2,
-            moved: 1
-        },
-        {
-            label: "Spring Integration for MQTT",
-            reason: "Spring Integration is a fantastic tool for some use cases. In our case, however, we experienced serious performance problems when we used it in a high-volume application.",
-            quadrant: 0,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "Vuetify",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Testcontainers",
-            reason: "Testcontainers is part of our toolkit to ensure the quality of our applications within our continuous deployment pipelines.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Typescript",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Spock",
-            reason: "Spock served us well in times of Java. Using Spock with Kotlin is cumbersome (e.g. no copy() methods), so we prefer vanilla JUnit. We miss data tables very much though... :-(",
-            quadrant: 0,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "Springdoc",
-            reason: "Springdoc java library helps to automate the generation of API documentation using spring boot projects. We use this for our publicly available http interfaces.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "socket.io",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Thymeleaf",
-            reason: "<a href='https://www.thymeleaf.org/' target='_blank'>Thymeleaf</a> is a server-side rendered Java templating engine. It's focus is on templates that can be rendered by browsers even though no backend server is running. This sounds promising as a UI designer can work independently from development. <br>In our project where we used it, this never happened. UX design and frontend development was done at the same time by the same person. So the templates are not so concise as they could be.",
-            quadrant: 0,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "Java",
-            quadrant: 0,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "JPA",
-            reason: "JPA or ORM in general can be quite the hassle for complex data models and heavy duty SQL due to the Object-Relation Impedance Mismatch. Ted Neward once called it the <a href='http://blogs.tedneward.com/post/the-vietnam-of-computer-science/' target='_blank'>Vietnam of Computer Science</a> for this exact reason. Since we usually don't build simple CRUD systems, JPA is rarely a good solution.",
-            quadrant: 0,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "GraphQL",
-            reason: "<a href='https://graphql.org/' target='_blank'>GraphQL</a> is a query language for your APIs. Opposing to REST calls this technology allows the client to customize the requests and ask for the required information based on a query. The execution side on the backend (resolvers) is fully decoupled from the requesting side.<br>This sounds like a promising tool when providing an application that needs a more flexible interface between frontend and backend.",
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Zalando Logbook",
-            reason: null,
-            quadrant: 0,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Custom Spring Boot Starter",
-            quadrant: 0,
-            ring: 2,
-            moved: 0
-        },
-        {
-            label: "Jest",
-            quadrant: 0,
-            ring: 3,
-            moved: -1
-        },
-        {
-            label: "vitest",
-            quadrant: 0,
-            ring: 0,
-            moved: 1
-        },
-        {
-            label: "Playwright",
-            quadrant: 0,
-            ring: 1,
-            moved: 1
-        },
-    ]
-
-    const infrastructure = [
-        {
-            label: "Kubernetes",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Sealed Secrets",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Kustomize",
-            reason: "Although kustomize is low-tech and easy to use, it becomes complex and error-prone for non-trivial deployments.",
-            quadrant: 2,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "Teamcity",
-            reason: "Teamcity served us well over the years, but newer projects are using Github Actions, which is easier to maintain and more fun to use.",
-            quadrant: 2,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "Github Actions",
-            reason: "Moving away from Teamcity, because Github Actions is easier to maintain and integrates well with the whole Github eco system (e.g. packages).",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Hosted IAM",
-            reason: "We lately moved over to hosted identity management because it seems to be more cost efficient than self-hosted services (depends on the size of course).",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Digital Ocean",
-            reason: "We run most of our projects using digital ocean services like managed clusters, databases, apps and spaces.",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Cloud Native Development",
-            reason: "We experiment with cloud native development to reduce our operation costs.",
-            quadrant: 2,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Sentry",
-            quadrant: 2,
-            ring: 0,
-            moved: 1
-        },
-        {
-            label: "Grafana (Cloud)",
-            quadrant: 2,
-            ring: 1,
-            moved: 1
-        },
-        {
-            label: "Github Packages",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Werf",
-            quadrant: 2,
-            ring: 3,
-            moved: 1
-        },
-        {
-            label: "Docker-Compose",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Traefik",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Helm",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Terraform",
-            quadrant: 2,
-            ring: 1,
-            moved: 1
-        },
-        {
-            label: "cert-manager",
-            quadrant: 2,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Keycloak",
-            quadrant: 2,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "Server-Sent-Events",
-            quadrant: 2,
-            ring: 3,
-            moved: 0
-        },
-    ]
-
-    const dataManagement = [
-        {
-            label: "Azure IoT Hub",
-            reason: "While Azure IoT Hub works well for simple devices that only post a single metric, we find it insufficient for more complex use cases and prefer to use a dedicated broker. Nevertheless, we've found the provisioning service to be highly reliable, despite the API being somewhat inconvenient.",
-            quadrant: 1,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Google Pub/Sub",
-            quadrant: 1,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Protobuf",
-            quadrant: 1,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "Hosted Broker",
-            reason: "Operating a distributed message broker is an arduous task that demands a significant amount of time. We have reached a juncture where we no longer wish to continue managing it ourselves and, if feasible, would prefer utilizing hosted brokers.",
-            quadrant: 1,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Prometheus",
-            quadrant: 1,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "TimescaleDB",
-            quadrant: 1,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "QuestDB",
-            quadrant: 1,
-            ring: 2,
-            moved: 0
-        },
-        {
-            label: "PostgreSQL",
-            reason: "<a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a> is an object-relational database system. It has a nice &#128024;.",
-            quadrant: 1,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Redis",
-            quadrant: 1,
-            ring: 0,
-            moved: 0
-        },
-    ]
-
-    const tools = [
-        {
-            label: "Renovate",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Jacoco",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Figma",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Squit",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "OpenAPI",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "AsyncAPI",
-            quadrant: 3,
-            ring: 1,
-            moved: 0
-        },
-        {
-            label: "k9s",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Gradle",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        }, {
-            label: "ADR",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Yarn Next",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "pnpm",
-            quadrant: 3,
-            ring: 0,
-            moved: 1
-        },
-        {
-            label: "Maven",
-            reason: "<a href='https://maven.apache.org/' target='_blank'>Apache Maven</a> is a solid, well proven and highly extensible build tool used in the Java ecosystem.<br>It is tedious to write and has a build lifecycle with phases no sane person can fully grasp. But it does the job.",
-            quadrant: 3,
-            ring: 3,
-            moved: 0
-        },
-        {
-            label: "JMeter",
-            quadrant: 3,
-            ring: 3,
-            moved: -1
-        },
-        {
-            label: "Gatling",
-            quadrant: 3,
-            ring: 1,
-            moved: 1
-        },
-        {
-            label: "AI coding tools",
-            quadrant: 3,
-            ring: 0,
-            moved: 1
-        },
-        {
-            label: "Skaffold",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "MQTT X",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-        {
-            label: "Balsamiq Cloud",
-            quadrant: 3,
-            ring: 0,
-            moved: 0
-        },
-    ]
-
-    radar_visualization({
-        svg_id: "radar",
-        width: 1450,
-        height: 1000,
-        colors: {
-            background: "#fff",
-            grid: "#bbb",
-            inactive: "#ddd"
-        },
-        title: "Smartsquare Tech Radar — 2023.12",
-        quadrants: [
-            {name: "Languages and Frameworks"},
-            {name: "Data Management"},
-            {name: "Infrastructure"},
-            {name: "Tools and Techniques"},
-        ],
-        rings: [
-            {name: "ADOPT", color: "#93c47d"},
-            {name: "TRIAL", color: "#93d2c2"},
-            {name: "ASSESS", color: "#fbdb84"},
-            {name: "HOLD", color: "#efafa9"}
-        ],
-        print_layout: true,
-        entries: [...languagesAndFrameworks, ...dataManagement, ...infrastructure, ...tools]
-    });
-</script>
-
-<table>
-    <tr>
+    <table>
+      <tr>
         <td>
+          <h3>What is the Tech Radar?</h3>
 
-            <h3>What is the Tech Radar?</h3>
+          <p>
+            The Smartsquare Tech Radar, based on the
+            <a href="https://opensource.zalando.com/tech-radar/">Zalando Tech Radar</a>, is a list of technologies,
+            complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the following
+            semantics:
+          </p>
 
-            <p>
-                The Smartsquare Tech Radar, based on the
-                <a href="https://opensource.zalando.com/tech-radar/">Zalando Tech Radar</a>, is a list of technologies,
-                complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the
-                following semantics:
-            </p>
-
-            <ul>
-                <li><strong>ADOPT</strong> &mdash; Technologies we have high confidence in to serve our purpose, also in
-                    large scale. Technologies with a usage culture in our production environment, low risk and
-                    recommended to be widely used but need to fit the use case as well as the requirements.
-                </li>
-                <li><strong>TRIAL</strong> &mdash; Technologies that we have seen work with success in project work to
-                    solve a real problem; first serious usage experience that confirm benefits and can uncover
-                    limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked
-                    this path and will share knowledge and experiences.
-                </li>
-                <li><strong>ASSESS</strong> &mdash; Technologies that are promising and have clear potential value-add
-                    for us; technologies worth to invest some research and prototyping efforts in to see if it has
-                    impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our
-                    organisation. You will find some engineers that have knowledge in the technology and promote it, you
-                    may even find teams that have started a prototyping effort.
-                </li>
-                <li><strong>HOLD</strong> &mdash; Technologies not recommended to be used for new projects. Technologies
-                    that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for
-                    new projects, but usually can be continued for existing projects.
-                </li>
-            </ul>
-
+          <ul>
+            <li>
+              <strong>ADOPT</strong> &mdash; Technologies we have high confidence in to serve our purpose, also in large
+              scale. Technologies with a usage culture in our production environment, low risk and recommended to be
+              widely used but need to fit the use case as well as the requirements.
+            </li>
+            <li>
+              <strong>TRIAL</strong> &mdash; Technologies that we have seen work with success in project work to solve a
+              real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL
+              technologies are slightly more risky; some engineers in our organization walked this path and will share
+              knowledge and experiences.
+            </li>
+            <li>
+              <strong>ASSESS</strong> &mdash; Technologies that are promising and have clear potential value-add for us;
+              technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS
+              technologies have higher risks; they are often brand new and highly unproven in our organisation. You will
+              find some engineers that have knowledge in the technology and promote it, you may even find teams that
+              have started a prototyping effort.
+            </li>
+            <li>
+              <strong>HOLD</strong> &mdash; Technologies not recommended to be used for new projects. Technologies that
+              we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new
+              projects, but usually can be continued for existing projects.
+            </li>
+          </ul>
         </td>
         <td>
+          <h3>What is the purpose?</h3>
 
-            <h3>What is the purpose?</h3>
-
-            <p>
-                The Tech Radar is a tool to inspire and support the engineers at Smartsquare and the open-source
-                community to pick the best technologies for new projects. It provides a platform to share knowledge
-                and experiences in technologies, to reflect on technology decisions and continuously evolve our
-                technology landscape. This radar is based on the work of
-                <a href="https://opensource.zalando.com/">Zalando</a> and
-                <a href="https://www.thoughtworks.com/radar">ThoughtWorks</a>.
-            </p>
-
+          <p>
+            The Tech Radar is a tool to inspire and support the engineers at Smartsquare and the open-source community
+            to pick the best technologies for new projects. It provides a platform to share knowledge and experiences in
+            technologies, to reflect on technology decisions and continuously evolve our technology landscape. This
+            radar is based on the work of
+            <a href="https://opensource.zalando.com/">Zalando</a> and
+            <a href="https://www.thoughtworks.com/radar">ThoughtWorks</a>.
+          </p>
         </td>
-    </tr>
-</table>
-
-</body>
+      </tr>
+    </table>
+  </body>
+  <script type="module" src="/main.ts"></script>
 </html>

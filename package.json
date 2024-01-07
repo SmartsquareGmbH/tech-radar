@@ -1,0 +1,32 @@
+{
+  "name": "tech-radar",
+  "private": true,
+  "version": "2023.12",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pretty": "prettier --check .",
+    "pretty:fix": "prettier --write .",
+    "verify": "tsc && pnpm pretty"
+  },
+  "dependencies": {
+    "d3": "^4.13.0",
+    "normalize.css": "^8.0.1",
+    "zalando-tech-radar": "git://github.com:zalando/tech-radar.git#301d64dbbd"
+  },
+  "devDependencies": {
+    "@types/d3": "^4.13.15",
+    "@types/node": "^20.10.4",
+    "@vitejs/plugin-legacy": "^5.2.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "zalando-tech-radar@2022.5.0": "patches/zalando-tech-radar@2022.5.0.patch"
+    }
+  }
+}
