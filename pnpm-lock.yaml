@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   zalando-tech-radar@2024.1.0:
-    hash: c2r5qqwicfzfqatdt2w6nh3exy
+    hash: s7bqw3monaxukjlawty7tb4sgq
     path: patches/zalando-tech-radar@2024.1.0.patch
 
 dependencies:
@@ -18,7 +18,7 @@ dependencies:
     version: 8.0.1
   zalando-tech-radar:
     specifier: github:zalando/tech-radar#7ca27f3b0c
-    version: github.com/zalando/tech-radar/7ca27f3b0c(patch_hash=c2r5qqwicfzfqatdt2w6nh3exy)
+    version: github.com/zalando/tech-radar/7ca27f3b0c(patch_hash=s7bqw3monaxukjlawty7tb4sgq)
 
 devDependencies:
   '@types/d3':
@@ -2760,7 +2760,7 @@ packages:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: true
 
-  github.com/zalando/tech-radar/7ca27f3b0c(patch_hash=c2r5qqwicfzfqatdt2w6nh3exy):
+  github.com/zalando/tech-radar/7ca27f3b0c(patch_hash=s7bqw3monaxukjlawty7tb4sgq):
     resolution: {tarball: https://codeload.github.com/zalando/tech-radar/tar.gz/7ca27f3b0c}
     id: github.com/zalando/tech-radar/7ca27f3b0c
     name: zalando-tech-radar
