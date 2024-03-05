@@ -48,7 +48,7 @@
     {
       "label": "Bun",
       "ring": 2,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Spring Integration for MQTT",
@@ -125,16 +125,26 @@
     {
       "label": "Jest",
       "ring": 3,
-      "moved": -1
+      "moved": 0
     },
     {
       "label": "vitest",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Playwright",
       "ring": 1,
+      "moved": 0
+    },
+    {
+      "label": "Angular",
+      "ring": 2,
+      "moved": 1
+    },
+    {
+      "label": "React",
+      "ring": 2,
       "moved": 1
     }
   ],
@@ -238,12 +248,12 @@
     {
       "label": "Sentry",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Grafana (Cloud)",
       "ring": 1,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Github Packages",
@@ -253,7 +263,7 @@
     {
       "label": "Werf",
       "ring": 3,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Docker-Compose",
@@ -272,7 +282,7 @@
     },
     {
       "label": "Terraform",
-      "ring": 1,
+      "ring": 0,
       "moved": 1
     },
     {
@@ -289,6 +299,11 @@
       "label": "Server-Sent-Events",
       "ring": 3,
       "moved": 0
+    },
+    {
+      "label": "WarpBuild",
+      "ring": 1,
+      "moved": 1
     }
   ],
   "tools": [
@@ -345,7 +360,7 @@
     {
       "label": "pnpm",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Maven",
@@ -356,17 +371,17 @@
     {
       "label": "JMeter",
       "ring": 3,
-      "moved": -1
+      "moved": 0
     },
     {
       "label": "Gatling",
       "ring": 1,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "AI coding tools",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Skaffold",
@@ -379,9 +394,9 @@
       "moved": 0
     },
     {
-      "label": "Balsamiq Cloud",
-      "ring": 0,
-      "moved": 0
+      "label": "Vuetify Figma Plugin",
+      "ring": 2,
+      "moved": 1
     }
   ]
 }
