@@ -139,13 +139,13 @@
     },
     {
       "label": "Angular",
-      "ring": 2,
+      "ring": 0,
       "moved": 1
     },
     {
       "label": "React",
       "ring": 2,
-      "moved": 1
+      "moved": 0
     }
   ],
   "dataManagement": [
@@ -173,11 +173,6 @@
     },
     {
       "label": "Prometheus",
-      "ring": 0,
-      "moved": 0
-    },
-    {
-      "label": "TimescaleDB",
       "ring": 0,
       "moved": 0
     },
@@ -252,8 +247,8 @@
     },
     {
       "label": "Grafana (Cloud)",
-      "ring": 1,
-      "moved": 0
+      "ring": 0,
+      "moved": 1
     },
     {
       "label": "Github Packages",
@@ -283,7 +278,7 @@
     {
       "label": "Terraform",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "cert-manager",
@@ -302,7 +297,12 @@
     },
     {
       "label": "WarpBuild",
-      "ring": 1,
+      "ring": 0,
+      "moved": 1
+    },
+    {
+      "label": "Azure OpenAI",
+      "ring": 2,
       "moved": 1
     }
   ],
@@ -353,9 +353,9 @@
       "moved": 0
     },
     {
-      "label": "Yarn Next",
-      "ring": 0,
-      "moved": 0
+      "label": "Yarn",
+      "ring": 3,
+      "moved": -1
     },
     {
       "label": "pnpm",
@@ -396,6 +396,16 @@
     {
       "label": "Vuetify Figma Plugin",
       "ring": 2,
+      "moved": 0
+    },
+    {
+      "label": "Fastlane",
+      "ring": 2,
+      "moved": 1
+    },
+    {
+      "label": "Flutter Flavorizr",
+      "ring": 1,
       "moved": 1
     }
   ]
