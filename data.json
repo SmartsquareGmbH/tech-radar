@@ -140,12 +140,17 @@
     {
       "label": "Angular",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "React",
       "ring": 2,
       "moved": 0
+    },
+    {
+      "label": "MapBox",
+      "ring": 0,
+      "moved": 1
     }
   ],
   "dataManagement": [
@@ -248,7 +253,7 @@
     {
       "label": "Grafana (Cloud)",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Github Packages",
@@ -298,10 +303,15 @@
     {
       "label": "WarpBuild",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Azure OpenAI",
+      "ring": 2,
+      "moved": 0
+    },
+    {
+      "label": "Supabase",
       "ring": 2,
       "moved": 1
     }
@@ -355,7 +365,7 @@
     {
       "label": "Yarn",
       "ring": 3,
-      "moved": -1
+      "moved": 0
     },
     {
       "label": "pnpm",
@@ -401,11 +411,16 @@
     {
       "label": "Fastlane",
       "ring": 2,
+      "moved": 0
+    },
+    {
+      "label": "Biome",
+      "ring": 2,
       "moved": 1
     },
     {
-      "label": "Flutter Flavorizr",
-      "ring": 1,
+      "label": "Velero",
+      "ring": 2,
       "moved": 1
     }
   ]
