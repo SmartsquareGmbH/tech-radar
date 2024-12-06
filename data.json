@@ -41,11 +41,6 @@
       "moved": 0
     },
     {
-      "label": "NestJS",
-      "ring": 0,
-      "moved": 0
-    },
-    {
       "label": "Bun",
       "ring": 2,
       "moved": 0
@@ -138,28 +133,17 @@
       "moved": 0
     },
     {
-      "label": "Angular",
-      "ring": 0,
-      "moved": 0
-    },
-    {
-      "label": "React",
-      "ring": 2,
-      "moved": 0
-    },
-    {
       "label": "MapBox",
       "ring": 0,
-      "moved": 1
+      "moved": 0
+    },
+    {
+      "label": "SuperTokens",
+      "ring": 2,
+      "moved": 2
     }
   ],
   "dataManagement": [
-    {
-      "label": "Azure IoT Hub",
-      "reason": "While Azure IoT Hub works well for simple devices that only post a single metric, we find it insufficient for more complex use cases and prefer to use a dedicated broker. Nevertheless, we've found the provisioning service to be highly reliable, despite the API being somewhat inconvenient.",
-      "ring": 1,
-      "moved": 0
-    },
     {
       "label": "Google Pub/Sub",
       "ring": 1,
@@ -179,11 +163,6 @@
     {
       "label": "Prometheus",
       "ring": 0,
-      "moved": 0
-    },
-    {
-      "label": "QuestDB",
-      "ring": 2,
       "moved": 0
     },
     {
@@ -292,8 +271,8 @@
     },
     {
       "label": "Keycloak",
-      "ring": 3,
-      "moved": 0
+      "ring": 0,
+      "moved": 1
     },
     {
       "label": "Server-Sent-Events",
@@ -313,7 +292,7 @@
     {
       "label": "Supabase",
       "ring": 2,
-      "moved": 1
+      "moved": 0
     }
   ],
   "tools": [
@@ -389,9 +368,9 @@
       "moved": 0
     },
     {
-      "label": "AI coding tools",
+      "label": "GitHub Copilot",
       "ring": 0,
-      "moved": 0
+      "moved": 2
     },
     {
       "label": "Skaffold",
@@ -404,24 +383,24 @@
       "moved": 0
     },
     {
-      "label": "Vuetify Figma Plugin",
-      "ring": 2,
-      "moved": 0
-    },
-    {
-      "label": "Fastlane",
-      "ring": 2,
-      "moved": 0
-    },
-    {
       "label": "Biome",
       "ring": 2,
-      "moved": 1
+      "moved": 0
     },
     {
-      "label": "Velero",
+      "label": "Spring Modulith",
       "ring": 2,
-      "moved": 1
+      "moved": 2
+    },
+    {
+      "label": "Cursor AI Code Editor",
+      "ring": 2,
+      "moved": 2
+    },
+    {
+      "label": "Qodana",
+      "ring": 2,
+      "moved": 2
     }
   ]
 }
