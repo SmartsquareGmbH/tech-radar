@@ -17,7 +17,7 @@ declare module "zalando-tech-radar/docs/radar.js" {
       reason?: string
       quadrant: number
       ring: number
-      moved: -1 | 0 | 1 | 2
+      moved: number
     }[]
   }
 
