@@ -1,15 +1,16 @@
 diff --git a/docs/radar.js b/docs/radar.js
-index f157ad3d930ed1e5251b54c3c45da38af3f7cab1..4e5c9dd0c786fc7a0f4dd8f9a232b51ab491233e 100644
+index 65f40a80d327c6860bdc3dc7f5a90b5274159715..469aa4313706fc49f51888e7c6aaff195449b27c 100644
 --- a/docs/radar.js
 +++ b/docs/radar.js
-@@ -20,8 +20,9 @@
+@@ -20,9 +20,9 @@
  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  // THE SOFTWARE.
 
 +import * as d3 from "d3"
 
 -function radar_visualization(config) {
+-
 +export function radar_visualization(config) {
-
-   // custom random number generator, to make random sequence reproducible
-   // source: https://stackoverflow.com/questions/521295
+   config.svg_id = config.svg || "radar";
+   config.width = config.width || 1450;
+   config.height = config.height || 1000;

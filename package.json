@@ -14,20 +14,20 @@
   "dependencies": {
     "d3": "^4.13.0",
     "normalize.css": "^8.0.1",
-    "zalando-tech-radar": "github:zalando/tech-radar#7ca27f3b0c"
+    "zalando-tech-radar": "github:zalando/tech-radar#1e5a38a0d9"
   },
   "devDependencies": {
     "@types/d3": "^4.13.15",
-    "@types/node": "^20.14.2",
-    "@vitejs/plugin-legacy": "^5.4.1",
-    "prettier": "^3.3.1",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.12"
+    "@types/node": "^22.10.1",
+    "@vitejs/plugin-legacy": "^6.0.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
   },
+  "packageManager": "pnpm@9.2.0",
   "pnpm": {
     "patchedDependencies": {
       "zalando-tech-radar@2024.1.0": "patches/zalando-tech-radar@2024.1.0.patch"
     }
-  },
-  "packageManager": "pnpm@9.2.0"
+  }
 }
