@@ -140,7 +140,7 @@
     {
       "label": "SuperTokens",
       "ring": 2,
-      "moved": 2
+      "moved": 0
     }
   ],
   "dataManagement": [
@@ -272,7 +272,7 @@
     {
       "label": "Keycloak",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Server-Sent-Events",
@@ -370,7 +370,7 @@
     {
       "label": "GitHub Copilot",
       "ring": 0,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "Skaffold",
@@ -390,16 +390,21 @@
     {
       "label": "Spring Modulith",
       "ring": 2,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "Cursor AI Code Editor",
       "ring": 2,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "Qodana",
       "ring": 2,
+      "moved": 0
+    },
+    {
+      "label": "Mermaid",
+      "ring": 0,
       "moved": 2
     }
   ]
