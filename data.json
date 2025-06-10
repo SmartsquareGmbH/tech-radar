@@ -161,11 +161,6 @@
       "moved": 0
     },
     {
-      "label": "Prometheus",
-      "ring": 0,
-      "moved": 0
-    },
-    {
       "label": "PostgreSQL",
       "reason": "<a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a> is an object-relational database system. It has a nice &#128024;.",
       "ring": 0,
@@ -230,7 +225,8 @@
       "moved": 0
     },
     {
-      "label": "Grafana (Cloud)",
+      "label": "Grafana Stack",
+      "reason": "Including Loki, Prometheus and Grafana. Using more tools is planned in the future.",
       "ring": 0,
       "moved": 0
     },
@@ -368,9 +364,10 @@
       "moved": 0
     },
     {
-      "label": "GitHub Copilot",
+      "label": "AI Assistants",
+      "reason": "There are many AI assistants available and the space is evolving rapidly. Currently ChatGPT, Claude, GitHub Copilot and IntelliJ Junie are the most popular with us.",
       "ring": 0,
-      "moved": 0
+      "moved": 1
     },
     {
       "label": "Skaffold",
@@ -389,11 +386,6 @@
     },
     {
       "label": "Spring Modulith",
-      "ring": 2,
-      "moved": 0
-    },
-    {
-      "label": "Cursor AI Code Editor",
       "ring": 2,
       "moved": 0
     },
