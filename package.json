@@ -18,11 +18,11 @@
   },
   "devDependencies": {
     "@types/d3": "^4.13.15",
-    "@types/node": "^22.13.9",
-    "@vitejs/plugin-legacy": "^6.0.2",
+    "@types/node": "^22.15.31",
+    "@vitejs/plugin-legacy": "^6.1.1",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.0"
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   },
   "packageManager": "pnpm@9.2.0",
   "pnpm": {
