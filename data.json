@@ -367,7 +367,7 @@
       "label": "AI Assistants",
       "reason": "There are many AI assistants available and the space is evolving rapidly. Currently ChatGPT, Claude, GitHub Copilot and IntelliJ Junie are the most popular with us.",
       "ring": 0,
-      "moved": 1
+      "moved": 2
     },
     {
       "label": "Skaffold",
