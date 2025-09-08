@@ -13,8 +13,8 @@
     },
     {
       "label": "Tailwind CSS + Headless UI",
-      "ring": 1,
-      "moved": 0
+      "ring": 2,
+      "moved": -1
     },
     {
       "label": "Nuxt.js",
@@ -42,8 +42,9 @@
     },
     {
       "label": "Bun",
-      "ring": 2,
-      "moved": 0
+      "reason": "Looks very promising, but still too early for production use.",
+      "ring": 3,
+      "moved": -1
     },
     {
       "label": "Spring Integration for MQTT",
@@ -113,11 +114,6 @@
       "moved": 0
     },
     {
-      "label": "Custom Spring Boot Starter",
-      "ring": 2,
-      "moved": 0
-    },
-    {
       "label": "Jest",
       "ring": 3,
       "moved": 0
@@ -139,7 +135,7 @@
     },
     {
       "label": "SuperTokens",
-      "ring": 2,
+      "ring": 0,
       "moved": 0
     }
   ],
@@ -170,6 +166,11 @@
       "label": "Redis",
       "ring": 0,
       "moved": 0
+    },
+    {
+      "label": "PowerSync",
+      "ring": 2,
+      "moved": 2
     }
   ],
   "infrastructure": [
@@ -367,7 +368,7 @@
       "label": "AI Assistants",
       "reason": "There are many AI assistants available and the space is evolving rapidly. Currently ChatGPT, Claude, GitHub Copilot and IntelliJ Junie are the most popular with us.",
       "ring": 0,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "Skaffold",

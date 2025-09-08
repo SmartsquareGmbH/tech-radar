@@ -1,7 +1,7 @@
 {
   "name": "tech-radar",
   "private": true,
-  "version": "2025.06",
+  "version": "2025.09",
   "type": "module",
   "scripts": {
     "dev": "vite",
