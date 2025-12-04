@@ -165,7 +165,7 @@
     {
       "label": "Valkey",
       "ring": 0,
-      "moved": 1
+      "moved": 2
     },
     {
       "label": "PowerSync",
@@ -295,13 +295,13 @@
       "label": "Bitnami Images",
       "reason": "Changed to non-free license",
       "ring": 3,
-      "moved": -1
+      "moved": 2
     },
     {
       "label": "Minio",
       "reason": "Changed to non-free license",
       "ring": 3,
-      "moved": -1
+      "moved": 2
     }
   ],
   "tools": [
