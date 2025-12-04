@@ -32,4 +32,3 @@ radarVisualization({
     ...tools.map((it) => ({ ...it, quadrant: 3 })),
   ],
 })
-
