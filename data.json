@@ -14,7 +14,7 @@
     {
       "label": "Tailwind CSS + Headless UI",
       "ring": 2,
-      "moved": -1
+      "moved": 0
     },
     {
       "label": "Nuxt.js",
@@ -44,7 +44,7 @@
       "label": "Bun",
       "reason": "Looks very promising, but still too early for production use.",
       "ring": 3,
-      "moved": -1
+      "moved": 0
     },
     {
       "label": "Spring Integration for MQTT",
@@ -135,20 +135,20 @@
     },
     {
       "label": "SuperTokens",
-      "ring": 0,
-      "moved": 0
+      "ring": 2,
+      "moved": -1
     }
   ],
   "dataManagement": [
     {
       "label": "Google Pub/Sub",
-      "ring": 1,
-      "moved": 0
+      "ring": 0,
+      "moved": 1
     },
     {
       "label": "Protobuf",
-      "ring": 1,
-      "moved": 0
+      "ring": 0,
+      "moved": 1
     },
     {
       "label": "Hosted Broker",
@@ -163,14 +163,14 @@
       "moved": 0
     },
     {
-      "label": "Redis",
+      "label": "Valkey",
       "ring": 0,
-      "moved": 0
+      "moved": 1
     },
     {
       "label": "PowerSync",
       "ring": 2,
-      "moved": 2
+      "moved": 0
     }
   ],
   "infrastructure": [
@@ -181,8 +181,8 @@
     },
     {
       "label": "Sealed Secrets",
-      "ring": 0,
-      "moved": 0
+      "ring": 3,
+      "moved": -1
     },
     {
       "label": "Kustomize",
@@ -216,9 +216,9 @@
     },
     {
       "label": "Cloud Native Development",
-      "reason": "We experiment with cloud native development to reduce our operation costs.",
-      "ring": 1,
-      "moved": 0
+      "reason": "Cloud Native has many valid use cases, just not for our kind of projects. The added complexity of infrastructure was not worth the cost for us.",
+      "ring": 3,
+      "moved": -1
     },
     {
       "label": "Sentry",
@@ -290,6 +290,18 @@
       "label": "Supabase",
       "ring": 2,
       "moved": 0
+    },
+    {
+      "label": "Bitnami Images",
+      "reason": "Changed to non-free license",
+      "ring": 3,
+      "moved": -1
+    },
+    {
+      "label": "Minio",
+      "reason": "Changed to non-free license",
+      "ring": 3,
+      "moved": -1
     }
   ],
   "tools": [
