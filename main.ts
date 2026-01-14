@@ -1,5 +1,5 @@
 import { radarVisualization } from "./radar"
-import { dataManagement, infrastructure, languagesAndFrameworks, tools } from "./data.json"
+import { infrastructure, languagesAndFrameworks, techniques, tools } from "./data.json"
 import { version } from "./package.json"
 
 radarVisualization({
@@ -14,10 +14,10 @@ radarVisualization({
   title: `Smartsquare Tech Radar — ${version}`,
   emptyReasonText: "No reason given yet ¯\\_(ツ)_/¯",
   quadrants: [
+    { name: "Techniques" },
+    { name: "Tools" },
     { name: "Languages and Frameworks" },
-    { name: "Data Management" },
     { name: "Infrastructure" },
-    { name: "Tools and Techniques" },
   ],
   rings: [
     { name: "ADOPT", color: "#5ba300" },
@@ -26,9 +26,9 @@ radarVisualization({
     { name: "HOLD", color: "#e09b96" },
   ],
   entries: [
-    ...languagesAndFrameworks.map((it) => ({ ...it, quadrant: 0 })),
-    ...dataManagement.map((it) => ({ ...it, quadrant: 1 })),
-    ...infrastructure.map((it) => ({ ...it, quadrant: 2 })),
-    ...tools.map((it) => ({ ...it, quadrant: 3 })),
+    ...languagesAndFrameworks.map((it) => ({ ...it, quadrant: 2 })),
+    ...infrastructure.map((it) => ({ ...it, quadrant: 3 })),
+    ...tools.map((it) => ({ ...it, quadrant: 1 })),
+    ...techniques.map((it) => ({ ...it, quadrant: 0 })),
   ],
 })

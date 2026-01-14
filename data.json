@@ -137,40 +137,11 @@
       "label": "SuperTokens",
       "ring": 2,
       "moved": -1
-    }
-  ],
-  "dataManagement": [
-    {
-      "label": "Google Pub/Sub",
-      "ring": 0,
-      "moved": 1
     },
     {
       "label": "Protobuf",
       "ring": 0,
       "moved": 1
-    },
-    {
-      "label": "Hosted Broker",
-      "reason": "Operating a distributed message broker is an arduous task that demands a significant amount of time. We have reached a juncture where we no longer wish to continue managing it ourselves and, if feasible, would prefer utilizing hosted brokers.",
-      "ring": 0,
-      "moved": 0
-    },
-    {
-      "label": "PostgreSQL",
-      "reason": "<a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a> is an object-relational database system. It has a nice &#128024;.",
-      "ring": 0,
-      "moved": 0
-    },
-    {
-      "label": "Valkey",
-      "ring": 0,
-      "moved": 2
-    },
-    {
-      "label": "PowerSync",
-      "ring": 2,
-      "moved": 0
     }
   ],
   "infrastructure": [
@@ -302,6 +273,33 @@
       "reason": "Changed to non-free license",
       "ring": 3,
       "moved": 2
+    },
+    {
+      "label": "Google Pub/Sub",
+      "ring": 0,
+      "moved": 1
+    },
+    {
+      "label": "Hosted Broker",
+      "reason": "Operating a distributed message broker is an arduous task that demands a significant amount of time. We have reached a juncture where we no longer wish to continue managing it ourselves and, if feasible, would prefer utilizing hosted brokers.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "PostgreSQL",
+      "reason": "<a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a> is an object-relational database system. It has a nice &#128024;.",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Valkey",
+      "ring": 0,
+      "moved": 2
+    },
+    {
+      "label": "PowerSync",
+      "ring": 2,
+      "moved": 0
     }
   ],
   "tools": [
@@ -342,11 +340,6 @@
     },
     {
       "label": "Gradle",
-      "ring": 0,
-      "moved": 0
-    },
-    {
-      "label": "ADR",
       "ring": 0,
       "moved": 0
     },
@@ -409,6 +402,78 @@
     },
     {
       "label": "Mermaid",
+      "ring": 0,
+      "moved": 0
+    }
+  ],
+  "techniques": [
+    {
+      "label": "CI/CD",
+      "ring": 0,
+      "moved": 0,
+      "reason": "Continuous Integration and Continuous Delivery/Deployment are standard practices in our projects to ensure high code quality and rapid delivery."
+    },
+    {
+      "label": "Infrastructure as code",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Containerization",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Config in environment",
+      "ring": 0,
+      "moved": 0,
+      "reason": "See <a href='https://12factor.net/config' target='_blank'>12factor.net/config</a>"
+    },
+    {
+      "label": "Monorepos",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Code reviews",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Code standards/Linting",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "ADRs",
+      "ring": 0,
+      "moved": 0,
+      "reason": "See <a href='https://adr.github.io/' target='_blank'>adr.github.io</a>"
+    },
+    {
+      "label": "TDD",
+      "ring": 0,
+      "moved": 0,
+      "reason": "See <a href='https://en.wikipedia.org/wiki/Test-driven_development' target='_blank'>wikipedia.org</a>"
+    },
+    {
+      "label": "AI assistance",
+      "ring": 0,
+      "moved": 0,
+      "reason": "We believe in using AI as a tool similar to linters and code formatters to enhance developer productivity and code quality."
+    },
+    {
+      "label": "Version control",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Documentation",
+      "ring": 0,
+      "moved": 0
+    },
+    {
+      "label": "Restful API design",
       "ring": 0,
       "moved": 0
     }
