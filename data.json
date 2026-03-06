@@ -12,7 +12,7 @@
       "moved": 0
     },
     {
-      "label": "Tailwind CSS + Headless UI",
+      "label": "Tailwind CSS",
       "ring": 2,
       "moved": 0
     },
@@ -56,6 +56,11 @@
       "label": "Vuetify",
       "ring": 0,
       "moved": 0
+    },
+    {
+      "label": "Vuetify0",
+      "ring": 2,
+      "moved": 2
     },
     {
       "label": "Testcontainers",
@@ -136,12 +141,12 @@
     {
       "label": "SuperTokens",
       "ring": 2,
-      "moved": -1
+      "moved": 0
     },
     {
       "label": "Protobuf",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     }
   ],
   "infrastructure": [
@@ -153,7 +158,7 @@
     {
       "label": "Sealed Secrets",
       "ring": 3,
-      "moved": -1
+      "moved": 0
     },
     {
       "label": "Kustomize",
@@ -174,6 +179,11 @@
       "moved": 0
     },
     {
+      "label": "Gitlab",
+      "ring": 2,
+      "moved": 2
+    },
+    {
       "label": "Hosted IAM",
       "reason": "We lately moved over to hosted identity management because it seems to be more cost efficient than self-hosted services (depends on the size of course).",
       "ring": 0,
@@ -189,7 +199,7 @@
       "label": "Cloud Native Development",
       "reason": "Cloud Native has many valid use cases, just not for our kind of projects. The added complexity of infrastructure was not worth the cost for us.",
       "ring": 3,
-      "moved": -1
+      "moved": 0
     },
     {
       "label": "Sentry",
@@ -253,11 +263,6 @@
       "moved": 0
     },
     {
-      "label": "Azure OpenAI",
-      "ring": 2,
-      "moved": 0
-    },
-    {
       "label": "Supabase",
       "ring": 2,
       "moved": 0
@@ -266,18 +271,18 @@
       "label": "Bitnami Images",
       "reason": "Changed to non-free license",
       "ring": 3,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "Minio",
       "reason": "Changed to non-free license",
       "ring": 3,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "Google Pub/Sub",
       "ring": 0,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Hosted Broker",
@@ -294,7 +299,7 @@
     {
       "label": "Valkey",
       "ring": 0,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "PowerSync",
@@ -370,10 +375,9 @@
       "moved": 0
     },
     {
-      "label": "AI Assistants",
-      "reason": "There are many AI assistants available and the space is evolving rapidly. Currently ChatGPT, Claude, GitHub Copilot and IntelliJ Junie are the most popular with us.",
+      "label": "Claude Code",
       "ring": 0,
-      "moved": 0
+      "moved": 2
     },
     {
       "label": "Skaffold",
@@ -386,17 +390,7 @@
       "moved": 0
     },
     {
-      "label": "Biome",
-      "ring": 2,
-      "moved": 0
-    },
-    {
       "label": "Spring Modulith",
-      "ring": 2,
-      "moved": 0
-    },
-    {
-      "label": "Qodana",
       "ring": 2,
       "moved": 0
     },
