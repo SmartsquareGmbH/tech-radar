@@ -1,6 +1,6 @@
-import { radarVisualization } from "./radar"
 import { infrastructure, languagesAndFrameworks, techniques, tools } from "./data.json"
 import { version } from "./package.json"
+import { radarVisualization } from "./radar"
 
 radarVisualization({
   svg_id: "radar",

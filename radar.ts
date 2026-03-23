@@ -242,7 +242,7 @@ export function radarVisualization(config: TechRadarConfig) {
     quadrant: number,
     ring: number,
     index: number | null = null,
-    previousHeight: number = 0
+    previousHeight: number = 0,
   ): string {
     const dx = ring < 2 ? 0 : LEGEND_COLUMN_WIDTH
     let dy = index === null ? -16 : index * 12
