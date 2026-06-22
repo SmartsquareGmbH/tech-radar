@@ -1,6 +1,5 @@
 blockExoticSubdeps: true
 minimumReleaseAge: 1440
 trustPolicy: no-downgrade
-minimumReleaseAgeExclude:
-  # Renovate security update: vite@8.0.5
-  - vite@8.0.5
+overrides:
+  nanoid@<=3.3.14: ^5
