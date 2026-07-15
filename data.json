@@ -60,7 +60,7 @@
     {
       "label": "Vuetify0",
       "ring": 2,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "Testcontainers",
@@ -179,11 +179,6 @@
       "moved": 0
     },
     {
-      "label": "Gitlab",
-      "ring": 2,
-      "moved": 2
-    },
-    {
       "label": "Hosted IAM",
       "reason": "We lately moved over to hosted identity management because it seems to be more cost efficient than self-hosted services (depends on the size of course).",
       "ring": 0,
@@ -278,6 +273,11 @@
       "reason": "Changed to non-free license",
       "ring": 3,
       "moved": 0
+    },
+    {
+      "label": "RustFS",
+      "ring": 2,
+      "moved": 1
     },
     {
       "label": "Google Pub/Sub",
@@ -377,7 +377,7 @@
     {
       "label": "Claude Code",
       "ring": 0,
-      "moved": 2
+      "moved": 0
     },
     {
       "label": "Skaffold",
