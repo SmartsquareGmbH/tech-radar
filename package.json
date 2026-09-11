@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@types/d3": "7.4.3",
-    "@types/node": "26.2.0",
+    "@types/node": "26.5.0",
     "oxfmt": "0.67.0",
     "oxlint": "1.82.0",
     "oxlint-tsgolint": "7.0.2001",
