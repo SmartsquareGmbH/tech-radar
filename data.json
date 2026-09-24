@@ -12,11 +12,6 @@
       "moved": 0
     },
     {
-      "label": "Tailwind CSS",
-      "ring": 2,
-      "moved": 0
-    },
-    {
       "label": "Nuxt.js",
       "reason": "<a href='https://nuxtjs.org/' target='_blank'>Nuxt.js</a> takes the last pieces boilerplate off your shoulders. Manual implementation of your authentication, the routing and recurring http error handling belong to the past.",
       "ring": 0,
@@ -139,11 +134,6 @@
       "moved": 0
     },
     {
-      "label": "SuperTokens",
-      "ring": 2,
-      "moved": 0
-    },
-    {
       "label": "Protobuf",
       "ring": 0,
       "moved": 0
@@ -258,11 +248,6 @@
       "moved": 0
     },
     {
-      "label": "Supabase",
-      "ring": 2,
-      "moved": 0
-    },
-    {
       "label": "Bitnami Images",
       "reason": "Changed to non-free license",
       "ring": 3,
@@ -277,7 +262,7 @@
     {
       "label": "RustFS",
       "ring": 2,
-      "moved": 1
+      "moved": 0
     },
     {
       "label": "Google Pub/Sub",
@@ -299,11 +284,6 @@
     {
       "label": "Valkey",
       "ring": 0,
-      "moved": 0
-    },
-    {
-      "label": "PowerSync",
-      "ring": 2,
       "moved": 0
     }
   ],
